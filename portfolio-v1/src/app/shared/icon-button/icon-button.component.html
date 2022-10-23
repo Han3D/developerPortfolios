@@ -1,0 +1,17 @@
+<button
+  [ngClass]="color"
+  class="btn"
+  matRipple
+  [matRippleCentered]="centered"
+  [matRippleDisabled]="disabled"
+  [matRippleUnbounded]="unbounded"
+  [matRippleRadius]="radius"
+  [matRippleColor]="color"
+>
+  <ng-content></ng-content>
+  <fa-icon
+    [icon]="actualIcon"
+    class="btn__icon"
+    *ngIf="isIconVisible"
+  ></fa-icon>
+</button>

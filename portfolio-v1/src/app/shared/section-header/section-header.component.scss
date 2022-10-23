@@ -1,0 +1,21 @@
+@import "src/styles.scss";
+
+.heading {
+    color: $heading-color;
+    text-transform: uppercase;
+    letter-spacing: -0.1em;
+    font-weight: 900;
+    text-align: center;
+    margin: 2rem 0;
+
+    .heading__small {
+        font-size: $section-size;
+    }
+    
+    .heading__background {
+        font-size: $section-background-size;
+        position: relative;
+        top: -3rem;
+        opacity: 0.03;
+    }
+}

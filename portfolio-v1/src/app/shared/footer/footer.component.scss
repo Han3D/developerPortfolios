@@ -1,0 +1,40 @@
+@import "src/styles.scss";
+
+footer {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0;
+
+    .footer__row {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 1rem;
+        align-items: center;
+
+        .footer__hr {
+            height: 0;
+            // width: 100%;
+    
+            border-bottom: 2px solid $action-color;
+        }
+    
+        .footer__icons {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+            flex-grow: 1;
+    
+            .social-icons {
+                color: $heading-color;
+            }
+        }
+    }
+
+    .footer__copyright {
+        color: $action-color;
+        font-size: 0.6rem;
+        text-align: center;
+    }
+}

@@ -15,8 +15,11 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { DisplaymessageComponent } from './messages/displaymessage.component';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 import { HeaderComponent } from './navbar/header.component';
-
-
+import { SectionHeaderComponent } from './section-header/section-header.component';
+import { FooterComponent } from './footer/footer.component';
+import { IconButtonComponent } from './icon-button/icon-button.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MatRippleModule } from '@angular/material/core';
 
 
 
@@ -24,7 +27,10 @@ import { HeaderComponent } from './navbar/header.component';
   declarations: [
     DisplaymessageComponent,
     LoadingSpinnerComponent,
-    HeaderComponent
+    HeaderComponent,
+    SectionHeaderComponent,
+    FooterComponent,
+    IconButtonComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +41,9 @@ import { HeaderComponent } from './navbar/header.component';
     MatInputModule,
     MatButtonModule,
     HttpClientModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    FontAwesomeModule,
+    MatRippleModule
   ],
   exports: [
     BrowserModule,
@@ -47,9 +55,14 @@ import { HeaderComponent } from './navbar/header.component';
     MatButtonModule,
     HttpClientModule,
     MatCheckboxModule,
+    FontAwesomeModule,
     DisplaymessageComponent,
     LoadingSpinnerComponent,
-    HeaderComponent
+    HeaderComponent,
+    SectionHeaderComponent,
+    FooterComponent,
+    IconButtonComponent,
+    MatRippleModule
   ],
   providers: [
     {

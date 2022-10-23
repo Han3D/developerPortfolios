@@ -1,0 +1,33 @@
+@import "src/styles.scss";
+
+.btn {
+  display: inline-block;
+  border: none;
+  outline: none;
+  padding: 0.75em 1.5em;
+  // color: transparent;
+  font-weight: bolder;
+  border-radius: 8px;
+  transition: transform 150ms ease-in;
+
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-4px);
+  }
+
+  .btn__icon {
+    margin-left: 1rem;
+  }
+}
+
+.primary {
+  background: linear-gradient(135deg, $action-color-lighter, $action-color);
+  color: $heading-color;
+  box-shadow: none;
+
+  //   box-shadow: 0 6px 15px -4px $action-color;
+
+  &:hover {
+    box-shadow: 0 8px 20px -4px $action-color;
+  }
+}

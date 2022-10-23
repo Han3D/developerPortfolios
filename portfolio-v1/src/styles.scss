@@ -16,7 +16,14 @@ $background-color-lighter: #012F26;
 $heading-color: #ffffff;
 $paragraph-color: #D0D0D0;
 $action-color: #735B09;
-$action-color-lighter: #93740C;
+
+$inset-shadow: rgba(1, 27, 22, 0.25);
+
+// Sections
+$section-size: 2rem;
+$section-background-size: 5rem;
+// $action-color-lighter: #e9bc27;
+$action-color-lighter: #a2800d;
 
 $portfolio-v1-primary: mat.define-palette(mat.$indigo-palette);
 $portfolio-v1-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
@@ -55,4 +62,29 @@ body {
 }
 body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+h1, h2, h3 {
+  color: $heading-color;
+  font-weight: 900;
+}
+
+p {
+  color: $paragraph-color;
+}
+
+.primary-color {
+  color: $action-color;
+}
+
+.lighter-background--gradient {
+  background: linear-gradient($background-color-lighter, $background-color);
 }
