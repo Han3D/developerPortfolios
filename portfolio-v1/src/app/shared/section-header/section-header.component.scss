@@ -19,3 +19,14 @@
         opacity: 0.03;
     }
 }
+
+@media (max-width: 768px) {
+    .heading__small {
+        font-size: calc($section-size - ($section-size / 3)) !important;
+    }
+
+    .heading__background {
+        font-size: calc($section-background-size - ($section-background-size / 3)) !important;
+        top: -2rem !important;
+    }
+  }

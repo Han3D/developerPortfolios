@@ -11,11 +11,11 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$background-color: #01241D;
-$background-color-lighter: #012F26;
+$background-color: #01241d;
+$background-color-lighter: #012f26;
 $heading-color: #ffffff;
-$paragraph-color: #D0D0D0;
-$action-color: #735B09;
+$paragraph-color: #d0d0d0;
+$action-color: #735b09;
 
 $inset-shadow: rgba(1, 27, 22, 0.25);
 
@@ -25,7 +25,40 @@ $section-background-size: 5rem;
 // $action-color-lighter: #e9bc27;
 $action-color-lighter: #a2800d;
 
-$portfolio-v1-primary: mat.define-palette(mat.$indigo-palette);
+$primary: (
+  50: #eeebe1,
+  100: #d5ceb5,
+  200: #b9ad84,
+  300: #9d8c53,
+  400: #88742e,
+  500: #735b09,
+  600: #6b5308,
+  700: #604906,
+  800: #564005,
+  900: #432f02,
+  A100: #ffcd78,
+  A200: #ffba45,
+  A400: #ffa712,
+  A700: #f79b00,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$portfolio-v1-primary: mat.define-palette($primary);
 $portfolio-v1-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
@@ -33,7 +66,7 @@ $portfolio-v1-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$portfolio-v1-theme: mat.define-light-theme(
+$portfolio-v1-theme: mat.define-dark-theme(
   (
     color: (
       primary: $portfolio-v1-primary,
@@ -64,15 +97,17 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-
 .container {
   margin: 0 auto;
   max-width: 1200px;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  margin-bottom: 8rem;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: $heading-color;
   font-weight: 900;
 }
@@ -85,6 +120,54 @@ p {
   color: $action-color;
 }
 
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2rem;
+}
+
+.columns {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .lighter-background--gradient {
   background: linear-gradient($background-color-lighter, $background-color);
+}
+
+.coming-soon {
+  text-align: center;
+  margin-bottom: 5rem;
+  opacity: 0.5;
+  font-weight: bolder;
+}
+
+// Inputs
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: transparent;
+  background-color: $background-color-lighter;
+  border-radius: 8px;
+}
+
+textarea {
+  min-height: 10rem;
+}
+
+.mat-input-element {
+  color: $paragraph-color !important;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .two-column {
+    grid-template-columns: 1fr;
+
+    .columns {
+      margin-top: 2rem;
+    }
+  }
 }

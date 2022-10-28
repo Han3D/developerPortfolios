@@ -1,0 +1,19 @@
+.contact-card {
+    align-items: center;
+
+    .contact-card__image {
+        border-radius: 100vh;
+        height: 200px;
+        width: 200px;
+        background-image: url("/assets/img/15.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin-bottom: 2rem;
+    }
+
+    p {
+        max-width: 300px;
+        text-align: center;
+        margin: 0.5rem;
+    }
+}

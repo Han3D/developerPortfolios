@@ -19,9 +19,11 @@ import { SectionHeaderComponent } from './section-header/section-header.componen
 import { FooterComponent } from './footer/footer.component';
 import { IconButtonComponent } from './icon-button/icon-button.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { MatRippleModule } from '@angular/material/core';
-
-
+import {
+  ErrorStateMatcher,
+  MatRippleModule,
+  ShowOnDirtyErrorStateMatcher,
+} from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,7 @@ import { MatRippleModule } from '@angular/material/core';
     HeaderComponent,
     SectionHeaderComponent,
     FooterComponent,
-    IconButtonComponent
+    IconButtonComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,7 @@ import { MatRippleModule } from '@angular/material/core';
     HttpClientModule,
     MatCheckboxModule,
     FontAwesomeModule,
-    MatRippleModule
+    MatRippleModule,
   ],
   exports: [
     BrowserModule,
@@ -62,13 +64,14 @@ import { MatRippleModule } from '@angular/material/core';
     SectionHeaderComponent,
     FooterComponent,
     IconButtonComponent,
-    MatRippleModule
+    MatRippleModule,
   ],
   providers: [
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
       useValue: { appearance: 'outline' },
     },
+    { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher },
   ],
 })
-export class SharedModule { }
+export class SharedModule {}

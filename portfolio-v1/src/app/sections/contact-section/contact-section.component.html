@@ -1,3 +1,40 @@
 <div class="container">
-    <app-section-header heading="Contact"></app-section-header>
+  <app-section-header heading="Contact"></app-section-header>
+  <div class="two-column">
+    <div class="columns contact-card">
+      <span class="contact-card__image"></span>
+      <h3>Lets get in touch!</h3>
+      <p>Either by <span class="primary-color">email</span> or through the other linked platforms</p>
+    </div>
+    <form
+      class="columns contact-form"
+      [formGroup]="contactForm" #contactFormDirective="ngForm"
+      (ngSubmit)="sendContactMessage()"
+    >
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input type="text" matInput formControlName="nameControl" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input type="email" matInput formControlName="emailControl" />
+        <mat-error *ngIf="emailControl?.hasError('email')">
+          Please enter a valid email address
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Message</mat-label>
+        <textarea matInput formControlName="messageControl"></textarea>
+      </mat-form-field>
+
+      <displaymessage messagetype="success" *ngIf="sendSuccess">Your message was successfully sent to me!</displaymessage>
+      <displaymessage messagetype="error" *ngIf="sendError">There was an error sending the message. Please try again later.</displaymessage>
+      <displaymessage messagetype="error" *ngIf="validFormError">Please fill in all fields correctly to send a message to me!.</displaymessage>
+
+      <app-icon-button color="primary" icon="send"
+        >Send message</app-icon-button
+      >
+    </form>
+  </div>
 </div>

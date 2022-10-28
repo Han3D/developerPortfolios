@@ -1,47 +1,65 @@
 /* Region - Messages */
+// .message {
+// 	padding: 1.25em 1.75em;
+// 	display: flex;
+// 	flex-direction: row;
+// 	flex-grow: 1;
+// 	align-items: center;
+// 	&::before {
+// 		display: inline-block;
+// 		font-style: normal;
+// 		font-variant: normal;
+// 		text-rendering: auto;
+// 		-webkit-font-smoothing: antialiased;
+// 		margin-right: 0.5rem;
+// 		font-family: "FontAwesome 6 Free";
+// 		font: var(--fa-font-solid);
+// 		font-size: 1rem;
+// 	}
+// }
 .message {
+	display: block;
 	padding: 1.25em 1.75em;
 	display: flex;
 	flex-direction: row;
-	flex-grow: 1;
+	justify-content: flex-start;
 	align-items: center;
-	&::before {
-		display: inline-block;
-		font-style: normal;
-		font-variant: normal;
-		text-rendering: auto;
-		-webkit-font-smoothing: antialiased;
-		margin-right: 0.5rem;
-		font-family: "FontAwesome 6 Free";
-		font: var(--fa-font-solid);
-		font-size: 1rem;
-	}
+	border-radius: 8px;
+	margin: 0.5rem 0;
+	margin-bottom: 2rem;
+	font-weight: 500;
 }
+
+.message__icon {
+	margin: 0.2rem 0;
+	margin-right: 1rem;
+}
+
 .success {
 	color: #1ea97c;
 	background-color: #e4f8f0;
-	&::before {
-		content: "\f058";
-	}
+	// &::before {
+	// 	content: "\f058";
+	// }
 }
 .info {
 	color: #696cff;
 	background-color: #e9e9ff;
-	&::before {
-		content: "\f05a";
-	}
+	// &::before {
+	// 	content: "\f05a";
+	// }
 }
 .warning {
 	color: #cc8925;
 	background-color: #fff2e2;
-	&::before {
-		content: "\f071";
-	}
+	// &::before {
+	// 	content: "\f071";
+	// }
 }
 .error {
 	color: #ff5757;
 	background-color: #ffe7e6;
-	&::before {
-		content: "\f06a";
-	}
+	// &::before {
+	// 	content: "\f06a";
+	// }
 }
