@@ -1,0 +1,92 @@
+@import "src/styles.scss";
+
+.word-cloud {
+  color: $heading-color;
+  // align-items: center;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+
+  grid-template:
+    ". . . BlenderGR . ReactnativeGR"
+    ". . AwsGR . . ReactnativeGR"
+    "FirebaseGR FirebaseGR FirebaseGR KotlinGR SwiftuiGR SwiftuiGR"
+    ". . FlutterGR KotlinGR DevopsGR DockerGR"
+    ". . . . DevopsGR .";
+
+  div:nth-child(2n) {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  div:nth-child(3n) {
+    writing-mode: vertical-lr;
+    -webkit-writing-mode: vertical-lr;
+    -ms-writing-mode: vertical-lr;
+    color: $action-color-lighter;
+  }
+
+  //   div:nth-child(4n) {
+  //     font-size: 3rem;
+  //     // writing-mode: vertical-lr;
+  //     // -webkit-writing-mode: vertical-lr;
+  //     // -ms-writing-mode: vertical-lr;
+  //   }
+  div:nth-child(4n) {
+    font-size: 1rem;
+    font-weight: normal;
+  }
+
+  div:nth-child(5n) {
+    font-size: 4rem;
+  }
+
+  div:nth-child(6n) {
+    font-size: 1rem;
+  }
+
+  div:nth-child(8n) {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+  div:nth-child(9n) {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  div:hover {
+    cursor: pointer;
+    text-shadow: 2px 2px 8px $action-color;
+  }
+}
+
+#docker {
+  grid-area: DockerGR;
+}
+#aws {
+  grid-area: AwsGR;
+}
+#reactnative {
+  grid-area: ReactnativeGR;
+}
+#devops {
+  grid-area: DevopsGR;
+}
+#firebase {
+  grid-area: FirebaseGR;
+}
+#blender {
+  grid-area: BlenderGR;
+}
+#kotlin {
+  grid-area: KotlinGR;
+}
+#swiftui {
+  grid-area: SwiftuiGR;
+}
+#flutter {
+  grid-area: FlutterGR;
+}

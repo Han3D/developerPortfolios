@@ -16,4 +16,28 @@
         text-align: center;
         margin: 0.5rem;
     }
+
+    .contact-card__form {
+        padding: 0 2rem;
+    }
+}
+
+.earth {
+    background-image: url("/assets/img/earth.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: -260px;
+    z-index: 10;
+    opacity: 0.05;
+    position: absolute;
+    top: -6rem;
+    left: 0;
+    min-height: 400px;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .earth {
+        background-position-x: -200px;
+    }
 }

@@ -43,11 +43,8 @@
     filter: drop-shadow(0px 5px 15px $inset-shadow);
 }
 
-.about {
-    padding: 7rem 0 0;
-}
-
 .about--clip {
+    padding-top: 8rem;
     clip-path: polygon(0 0, 100% 26%, 100% 100%, 0% 100%);
 }
 

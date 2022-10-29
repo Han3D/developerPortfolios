@@ -100,9 +100,7 @@ body {
 .container {
   margin: 0 auto;
   max-width: 1200px;
-  padding-left: 3rem;
-  padding-right: 3rem;
-  margin-bottom: 8rem;
+  padding: 5rem 3rem;
 }
 
 h1,
@@ -132,8 +130,16 @@ p {
   width: 100%;
 }
 
+.relative-position {
+  position: relative;
+}
+
 .lighter-background--gradient {
   background: linear-gradient($background-color-lighter, $background-color);
+}
+
+.lighter-background {
+  background-color: $background-color-lighter;
 }
 
 .coming-soon {
