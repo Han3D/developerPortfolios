@@ -10,8 +10,8 @@ import { AuthService } from 'src/app/auth/auth.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  isLoggedIn!: boolean;
-  private authState!: Subscription;
+  isLoggedIn: boolean = false;
+  // private authState!: Subscription;
   showNavItems = false;
 
   @HostListener('window:resize', []) updateDays() {
@@ -32,15 +32,16 @@ export class HeaderComponent implements OnInit {
     if (window.innerWidth >= 600) {
       this.showNavItems = true;
     }
+    this.authService.currentAuthStatus.subscribe(authStatus => this.isLoggedIn = authStatus);
 
-    this.authState = this.firebaseAuth.authState.subscribe((user) => {
-      if (user) {
-        console.log('✏️ ~ this.firebaseAuth.authState.subscribe ~ user', user);
+    // this.authState = this.firebaseAuth.authState.subscribe((user) => {
+    //   if (user) {
+    //     console.log('✏️ ~ header subscription ~ user', user);
 
-        this.isLoggedIn = !!user;
-      }
-      return false;
-    });
+    //     this.isLoggedIn = !!user;
+    //   }
+    //   return false;
+    // });
   }
 
   /**
@@ -61,12 +62,11 @@ export class HeaderComponent implements OnInit {
         console.log('✏️ ~ isLoggedOut.then ~ err', err);
       })
       .finally(() => {
-        this.isLoggedIn = false;
         this.router.navigate(['login']);
       });
   }
 
-  ngOnDestroy() {
+  /* ngOnDestroy() {
     this.authState.unsubscribe();
-  }
+  } */
 }

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SectionsModule } from './auth/sections/sections.module';
 import { SharedModule } from './shared/shared.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AuthModule } from './auth/auth.module';
@@ -18,7 +17,6 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     AppRoutingModule,
     SharedModule,
     AuthModule,
-    SectionsModule,
     FontAwesomeModule
   ],
   providers: [{

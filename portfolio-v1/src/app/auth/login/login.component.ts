@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
 
   // Errors
   loginError = false;
+  loginErrorMessage = "";
   validFormError = false;
 
   constructor(
@@ -60,7 +61,16 @@ export class LoginComponent implements OnInit {
         })
         .catch((err) => {
           console.log('✏️ ~ isAuthenticated.then ~ err', err.message);
-          this.router.navigate(['/auth']);
+          // User feedback
+          const errorMessage = err.message.replace("Firebase: ", "");
+          this.loginErrorMessage = errorMessage;
+          this.loginError = true;
+
+          setTimeout(() => {
+            this.loginError = false;
+          }, 4000);
+
+          // this.router.navigate(['/login']);
         });
     } else {
       // Lgin Form not valid

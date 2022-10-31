@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SectionsComponent } from './sections/sections.component';
+// import { SectionsComponent } from './sections/sections.component';
 
 const routes: Routes = [
-  { path: 'auth', component: SectionsComponent }
+  // { path: 'auth', component: SectionsComponent }
 ];
 
 @NgModule({
