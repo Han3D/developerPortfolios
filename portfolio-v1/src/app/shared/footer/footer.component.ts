@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { faLinkedin, faTwitter, faGithub, faBehance } from '@fortawesome/free-brands-svg-icons';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-footer',
@@ -12,9 +14,20 @@ export class FooterComponent implements OnInit {
   github = faGithub;
   behance = faBehance;
 
-  constructor() { }
+  isLoggedIn!: boolean;
+  private authState!: Subscription;
+
+  constructor(private firebaseAuth: AngularFireAuth) {}
 
   ngOnInit(): void {
+    this.authState = this.firebaseAuth.authState.subscribe(user => {
+      if (user) {
+        console.log("✏️ ~ this.firebaseAuth.authState.subscribe ~ user", user);
+        
+        this.isLoggedIn = !!user;
+      }
+      return false;
+    });
   }
 
 }

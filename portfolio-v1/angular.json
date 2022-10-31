@@ -122,6 +122,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "portfolio-v1:build:production",
+            "firebaseProject": "han3d-portfolio",
+            "firebaseHostingSite": "han3d-portfolio"
+          }
         }
       }
     }

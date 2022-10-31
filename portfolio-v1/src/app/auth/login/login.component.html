@@ -1,0 +1,33 @@
+<div class="container container--login">
+  <app-section-header heading="Login"></app-section-header>
+  <form
+    class="columns login-form"
+    [formGroup]="loginForm"
+    #contactFormDirective="ngForm"
+    (ngSubmit)="onLogin()"
+  >
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input type="email" matInput formControlName="emailControl" />
+      <mat-error *ngIf="emailControl?.hasError('email')">
+        Please enter a valid email address
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input type="password" matInput formControlName="passwordControl" />
+    </mat-form-field>
+
+    <displaymessage messagetype="error" *ngIf="loginError"
+      >There was an error loggingyou in. Please try again later or contact me
+      for new credentials.</displaymessage
+    >
+    <displaymessage messagetype="error" *ngIf="validFormError"
+      >Please fill in all fields correctly to send a message to
+      me!.</displaymessage
+    >
+
+    <app-icon-button color="primary" icon="send">Login</app-icon-button>
+  </form>
+</div>

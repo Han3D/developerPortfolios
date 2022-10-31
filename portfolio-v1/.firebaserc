@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "han3d-portfolio"
+  },
+  "targets": {
+    "han3d-portfolio": {
+      "hosting": {
+        "portfolio-v1": [
+          "han3d-portfolio"
+        ]
+      }
+    }
+  }
+}

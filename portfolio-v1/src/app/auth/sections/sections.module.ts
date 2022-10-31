@@ -5,26 +5,19 @@ import { LearningSectionComponent } from './learning-section/learning-section.co
 import { ProjectsSectionComponent } from './projects-section/projects-section.component';
 import { ProjectComponent } from './projects-section/project/project.component';
 import { SkillComponent } from './skills-section/skill/skill.component';
-import { ContactSectionComponent } from './contact-section/contact-section.component';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '../../shared/shared.module';
+// import { SectionsComponent } from './sections.component';
 
 @NgModule({
   imports: [SharedModule],
-  exports: [
-    HeroSectionComponent,
-    SkillsSectionComponent,
-    LearningSectionComponent,
-    ProjectsSectionComponent,
-    ContactSectionComponent,
-  ],
+  exports: [],
   declarations: [
     HeroSectionComponent,
     SkillsSectionComponent,
     LearningSectionComponent,
     ProjectsSectionComponent,
     ProjectComponent,
-    SkillComponent,
-    ContactSectionComponent,
+    SkillComponent
   ],
   providers: [],
 })

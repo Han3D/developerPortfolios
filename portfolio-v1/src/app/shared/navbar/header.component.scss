@@ -105,6 +105,7 @@
 
 .nav__item {
   margin-top: 1rem;
+  z-index: 100;
 }
 
 .nav__item--right {
@@ -134,12 +135,18 @@
 
   &:hover {
     opacity: 1;
+    cursor: pointer;
   }
 
   &:hover::before {
     bottom: 10px;
     opacity: 1;
   }
+}
+
+.nav__link--active.nav__link::before {
+    bottom: 10px;
+    opacity: 1;
 }
 
 .nav__link--highlighted {

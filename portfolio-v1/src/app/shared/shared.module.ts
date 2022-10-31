@@ -24,6 +24,7 @@ import {
   MatRippleModule,
   ShowOnDirtyErrorStateMatcher,
 } from '@angular/material/core';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import {
     IconButtonComponent,
   ],
   imports: [
+    RouterModule,
     BrowserModule,
     CommonModule,
     FormsModule,

@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-contact-section',
-  templateUrl: './contact-section.component.html',
-  styleUrls: ['./contact-section.component.scss'],
+  selector: 'app-contact',
+  templateUrl: './contact.component.html',
+  styleUrls: ['./contact.component.scss'],
 })
-export class ContactSectionComponent implements OnInit {
+export class ContactComponent implements OnInit {
   contactForm!: FormGroup;
   submitted = false;
 

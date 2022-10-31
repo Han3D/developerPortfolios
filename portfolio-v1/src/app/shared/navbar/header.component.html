@@ -5,16 +5,17 @@
                 <button class="nav-toggle" (click)="toggleNavItems()">
                     <span class="hamburger"></span>
                 </button>
-                <a class="logo" href="#">
+                <a class="logo" [routerLink]="['home']">
                     <img src="assets/img/logo.png" alt="cooking-logo">
                 </a>
             </div>
-            <ul class="nav__list" *ngIf="showNavItems">
-                <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
-                <li class="nav__item"><a href="#" class="nav__link">Skills</a></li>
-                <li class="nav__item"><a href="#" class="nav__link">Projects</a></li>
-                <li class="nav__item"><a href="#" class="nav__link">Contact</a></li>
-                <li class="nav__item"><a href="#" class="nav__link">Login</a></li>
+            <ul class="nav__list">
+                <li class="nav__item" *ngIf="isLoggedIn"><a class="nav__link" [routerLink]="['home']" routerLinkActive="nav__link--active">Home</a></li>
+                <li class="nav__item" *ngIf="!isLoggedIn"><a class="nav__link" [routerLink]="['login']" routerLinkActive="nav__link--active">Login</a></li>
+                <li class="nav__item" *ngIf="isLoggedIn"><a class="nav__link" [routerLink]="['skills']" routerLinkActive="nav__link--active">Skills</a></li>
+                <li class="nav__item" *ngIf="isLoggedIn"><a class="nav__link" [routerLink]="['projects']" routerLinkActive="nav__link--active">Projects</a></li>
+                <li class="nav__item"><a class="nav__link" [routerLink]="['contact']" routerLinkActive="nav__link--active">Contact</a></li>
+                <li class="nav__item" *ngIf="isLoggedIn"><a class="nav__link" (click)="onLogout()">Logout</a></li>
             </ul>
         </nav>
     </div>
