@@ -1,0 +1,22 @@
+@import "src/styles.scss";
+
+.not-found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    // padding-top: 0;
+
+    .not-found__header {
+        color: $heading-color;
+        font-size: 6rem;
+        font-weight: bolder;
+        text-transform: uppercase;
+        letter-spacing: -0.5rem;
+        opacity: 0.9;
+    }
+
+    p {
+        max-width: 400px;
+    }
+}

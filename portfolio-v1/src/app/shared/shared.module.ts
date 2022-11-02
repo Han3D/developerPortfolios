@@ -25,6 +25,7 @@ import {
   ShowOnDirtyErrorStateMatcher,
 } from '@angular/material/core';
 import { RouterModule } from '@angular/router';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { RouterModule } from '@angular/router';
     SectionHeaderComponent,
     FooterComponent,
     IconButtonComponent,
+    NotFoundComponent,
   ],
   imports: [
     RouterModule,
@@ -67,6 +69,7 @@ import { RouterModule } from '@angular/router';
     FooterComponent,
     IconButtonComponent,
     MatRippleModule,
+    NotFoundComponent
   ],
   providers: [
     {

@@ -92,6 +92,7 @@
   flex-grow: 0 !important;
   padding-left: 2rem;
   list-style: none;
+  font-size: 0.85em;
 }
 
 .nav__visible {
@@ -115,12 +116,12 @@
 .nav__link {
   text-decoration: none;
   // text-transform: uppercase;
-  font-size: 0.85em;
   color: $heading-color;
   opacity: 0.75;
   display: inline-block;
   position: relative;
   padding-bottom: 1rem;
+  padding-top: 1rem;
 
   &::before {
     transition: 300ms;

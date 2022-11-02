@@ -4,6 +4,7 @@ import {
   faArrowRight,
   faFileArrowDown,
   faPaperPlane,
+  faArrowRightFromBracket
 } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -13,6 +14,7 @@ import {
 })
 export class IconButtonComponent implements OnInit {
   @Input() color = 'primary';
+  @Input() display = 'inline';
   @Input() icon = 'more';
   @Input() animate = 'hop';
 
@@ -42,6 +44,11 @@ export class IconButtonComponent implements OnInit {
       this.actualIcon = faFileArrowDown;
     } else if (this.icon === 'send') {
       this.actualIcon = faPaperPlane;
+    } else if (this.icon === 'logout') {
+      this.actualIcon = faArrowRightFromBracket;
+    } else if(this.icon === 'none') {
+      this.isIconVisible = false;
+      this.actualIcon = faArrowRight;
     } else {
       this.isIconVisible = false;
       this.actualIcon = faArrowRight;

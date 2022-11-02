@@ -1,14 +1,14 @@
 @import "src/styles.scss";
 
 .btn {
-  display: inline-block;
   border: none;
   outline: none;
-  padding: 0.75em 1.5em;
+  padding: 0.8em 1.5em;
   // color: transparent;
   font-weight: bolder;
   border-radius: 8px;
   transition: transform 150ms ease-in;
+  font-size: 1em;
 
   &:hover {
     cursor: pointer;
@@ -16,7 +16,7 @@
   }
 
   .btn__icon {
-    margin-left: 1rem;
+    margin-left: 1em;
   }
 }
 
@@ -30,4 +30,29 @@
   &:hover {
     box-shadow: 0 8px 20px -4px $action-color;
   }
+}
+
+.outlined {
+  color: $action-color-lighter;
+  background: transparent;
+  border: 1px solid $action-color-lighter;
+
+  &:hover {
+    transform: translateY(0px);
+    color: $heading-color;
+    background: linear-gradient(135deg, $action-color-lighter, $action-color);
+  }
+}
+
+.none {
+  display: none !important;
+}
+
+.inline {
+  display: inline;
+}
+
+.block {
+  display: block;
+  width: 100%;
 }
