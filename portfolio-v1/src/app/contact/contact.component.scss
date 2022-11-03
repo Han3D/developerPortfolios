@@ -1,11 +1,12 @@
 .contact-card {
+    padding: 3rem;
     align-items: center;
 
     .contact-card__image {
         border-radius: 100vh;
         height: 200px;
         width: 200px;
-        background-image: url("/assets/img/15.png");
+        background-image: url("/assets/img/eatramen.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         margin-bottom: 2rem;
@@ -23,7 +24,9 @@
 }
 
 .contact-form {
-    max-width: 450px;
+    padding: 3rem;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 .earth {
@@ -38,6 +41,12 @@
     left: 0;
     min-height: 400px;
     width: 100%;
+}
+
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (max-width: 768px) {

@@ -9,7 +9,7 @@
                     <img src="assets/img/logo.png" alt="cooking-logo">
                 </a>
             </div>
-            <ul class="nav__list">
+            <ul class="nav__list" [@inOutAnimation]="showNavItems">
                 <li class="nav__item" *ngIf="isLoggedIn"><a class="nav__link" [routerLink]="['home']" routerLinkActive="nav__link--active">Home</a></li>
                 <li class="nav__item" *ngIf="!isLoggedIn"><a class="nav__link" [routerLink]="['login']" routerLinkActive="nav__link--active">Login</a></li>
                 <li class="nav__item" *ngIf="isLoggedIn"><a class="nav__link" [routerLink]="['skills']" routerLinkActive="nav__link--active">Skills</a></li>

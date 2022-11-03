@@ -17,7 +17,7 @@
     ". . . . DevopsGR .";
 
   div:nth-child(2n) {
-    font-size: 2rem;
+    font-size: 2em;
     font-weight: bold;
   }
 
@@ -35,25 +35,25 @@
   //     // -ms-writing-mode: vertical-lr;
   //   }
   div:nth-child(4n) {
-    font-size: 1rem;
+    font-size: 1em;
     font-weight: normal;
   }
 
   div:nth-child(5n) {
-    font-size: 4rem;
+    font-size: 4em;
   }
 
   div:nth-child(6n) {
-    font-size: 1rem;
+    font-size: 1em;
   }
 
   div:nth-child(8n) {
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.5em;
   }
 
   div:nth-child(9n) {
-    font-size: 2rem;
+    font-size: 2em;
     font-weight: bold;
   }
 
@@ -89,4 +89,12 @@
 }
 #flutter {
   grid-area: FlutterGR;
+}
+
+@media (max-width: 768px) {
+  .word-cloud {
+    margin-top: 3rem;
+    gap: 0.3rem;
+    font-size: 0.8rem;
+  }
 }

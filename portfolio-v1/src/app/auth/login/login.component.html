@@ -1,34 +1,55 @@
-<div class="login-wrapper">
-  <div class="container container--login">
-    <app-section-header heading="Login"></app-section-header>
-    <form
-      class="columns login-form"
-      [formGroup]="loginForm"
-      #contactFormDirective="ngForm"
-      (ngSubmit)="onLogin()"
+<!-- <div class="login-wrapper"> -->
+<div class="container container--login">
+  <app-section-header heading="Login"></app-section-header>
+  <form
+    class="columns login-form gradient-box"
+    [formGroup]="loginForm"
+    #contactFormDirective="ngForm"
+    (ngSubmit)="onLogin()"
+  >
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input type="email" matInput formControlName="emailControl" />
+      <!-- <fa-icon [icon]="faUserTie" matSuffix></fa-icon> -->
+      <mat-icon matSuffix class="user-icon">email</mat-icon>
+      <mat-error *ngIf="emailControl?.hasError('email')">
+        Please enter a valid email address
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input
+        [type]="passwordhide ? 'password' : 'text'"
+        matInput
+        formControlName="passwordControl"
+      />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="passwordhide = !passwordhide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="passwordhide"
+        class="pw-button"
+        type="button"
+      >
+        <mat-icon>{{
+          passwordhide ? "visibility_off" : "visibility"
+        }}</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <displaymessage messagetype="error" *ngIf="loginError">{{
+      loginErrorMessage
+    }}</displaymessage>
+    <displaymessage messagetype="error" *ngIf="validFormError"
+      >Please fill in all fields correctly to send a message to
+      me!.</displaymessage
     >
-      <mat-form-field>
-        <mat-label>Email</mat-label>
-        <input type="email" matInput formControlName="emailControl" />
-        <mat-error *ngIf="emailControl?.hasError('email')">
-          Please enter a valid email address
-        </mat-error>
-      </mat-form-field>
-  
-      <mat-form-field>
-        <mat-label>Password</mat-label>
-        <input type="password" matInput formControlName="passwordControl" />
-      </mat-form-field>
-  
-      <displaymessage messagetype="error" *ngIf="loginError"
-        >{{loginErrorMessage}}</displaymessage
-      >
-      <displaymessage messagetype="error" *ngIf="validFormError"
-        >Please fill in all fields correctly to send a message to
-        me!.</displaymessage
-      >
-  
-      <app-icon-button color="primary" icon="send" display="block">Login</app-icon-button>
-    </form>
-  </div>
+
+    <app-icon-button color="primary" icon="send" display="block"
+      >Login</app-icon-button
+    >
+  </form>
 </div>
+<!-- </div> -->

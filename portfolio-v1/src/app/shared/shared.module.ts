@@ -10,6 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatIconModule } from '@angular/material/icon';
 
 // Own components
 import { DisplaymessageComponent } from './messages/displaymessage.component';
@@ -50,6 +51,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     MatCheckboxModule,
     FontAwesomeModule,
     MatRippleModule,
+    MatIconModule,
   ],
   exports: [
     BrowserModule,
@@ -69,7 +71,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     FooterComponent,
     IconButtonComponent,
     MatRippleModule,
-    NotFoundComponent
+    NotFoundComponent,
+    MatIconModule,
   ],
   providers: [
     {

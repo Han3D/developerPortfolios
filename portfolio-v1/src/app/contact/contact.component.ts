@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DataService } from '../shared/data.service';
 
 @Component({
   selector: 'app-contact',
@@ -9,35 +10,45 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ContactComponent implements OnInit {
   contactForm!: FormGroup;
   submitted = false;
+  isLoading = false;
 
   // User Feedback
   sendSuccess = false;
   sendError = false;
   validFormError = false;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private dataService: DataService) {}
 
   ngOnInit(): void {
     this.createContactForm();
   }
 
   // Getters
-  get nameControl() {
-    return this.contactForm.get('nameControl');
+  get name() {
+    return this.contactForm.get('name');
   }
-  get emailControl() {
-    return this.contactForm.get('emailControl');
+  get email() {
+    return this.contactForm.get('email');
   }
-  get messageControl() {
-    return this.contactForm.get('messageControl');
+  get contactNumber() {
+    return this.contactForm.get('contactNumber');
+  }
+  get message() {
+    return this.contactForm.get('message');
   }
 
   // Creates the contact form
   createContactForm() {
     this.contactForm = this.fb.group({
-      nameControl: ['', [Validators.required]],
-      emailControl: ['', [Validators.required, Validators.email]],
-      messageControl: ['', [Validators.required]],
+      name: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
+      contactNumber: [
+        '',
+        [
+          Validators.pattern('[- +()0-9]+')
+        ],
+      ],
+      message: ['', [Validators.required]],
     });
   }
 
@@ -46,11 +57,28 @@ export class ContactComponent implements OnInit {
     this.submitted = true;
     // TODO: implement sending
     if (this.contactForm.valid) {
-      this.sendSuccess = true;
-      setTimeout(() => {
-        this.sendSuccess = false;
-        this.submitted = false;
-      }, 4000);
+      this.isLoading = true;
+      this.dataService
+        .saveContactDetails(this.contactForm.value)
+        .then(() => {
+          this.isLoading = false;
+          this.sendSuccess = true;
+          setTimeout(() => {
+            this.sendSuccess = false;
+            this.submitted = false;
+          }, 4000);
+        })
+        .catch((err) => {
+          console.log("✏️ ~ sendContactMessage ~ err", err.message);
+          this.isLoading = false;
+          this.sendError = true;
+          setTimeout(() => {
+            this.sendError = false;
+          }, 4000);
+        })
+        .finally(() => {
+          this.contactForm.reset();
+        });
     } else {
       // Contact form is not valid
       this.validFormError = true;

@@ -1,3 +1,11 @@
+import {
+  animate,
+  group,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
 import { Component, HostListener, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
@@ -8,6 +16,23 @@ import { AuthService } from 'src/app/auth/auth.service';
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
+  animations: [
+    trigger('inOutAnimation', [
+      state('false', style({ height: 0, opacity: 0 })),
+      state('true', style({ height: 60, opacity: 1 })),
+      transition(
+        'false => true',
+        animate('500ms ease', style({ height: 60, opacity: 1 }))
+      ),
+      transition(
+        'true => false',
+        group([
+          animate('500ms 250ms ease', style({ height: 0 })),
+          animate('250ms ease', style({ opacity: 0 })),
+        ])
+      ),
+    ]),
+  ],
 })
 export class HeaderComponent implements OnInit {
   isLoggedIn: boolean = false;
@@ -32,7 +57,9 @@ export class HeaderComponent implements OnInit {
     if (window.innerWidth >= 600) {
       this.showNavItems = true;
     }
-    this.authService.currentAuthStatus.subscribe(authStatus => this.isLoggedIn = authStatus);
+    this.authService.currentAuthStatus.subscribe(
+      (authStatus) => (this.isLoggedIn = authStatus)
+    );
 
     // this.authState = this.firebaseAuth.authState.subscribe((user) => {
     //   if (user) {

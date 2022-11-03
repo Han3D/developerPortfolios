@@ -7,33 +7,61 @@
     <div class="columns contact-card">
       <span class="contact-card__image"></span>
       <h3>Lets get in touch!</h3>
-      <p>Either by <span class="primary-color">email</span> or through the other linked platforms</p>
+      <p>
+        Please send me a <span class="primary-color">message</span> and you will
+        be granted access to my
+        <span class="primary-color">portfolio</span> page. If you already have
+        access you can contact me via my linked platforms, mail or also via this
+        message box.
+      </p>
+    </div>
+    <div class="loading-spinner" *ngIf="isLoading">
+      <span class="loader"></span>
     </div>
     <form
-      class="columns contact-form"
-      [formGroup]="contactForm" #contactFormDirective="ngForm"
+      class="columns contact-form gradient-box2"
+      [formGroup]="contactForm"
+      #contactFormDirective="ngForm"
       (ngSubmit)="sendContactMessage()"
+      *ngIf="!isLoading"
     >
       <mat-form-field>
         <mat-label>Name</mat-label>
-        <input type="text" matInput formControlName="nameControl" />
+        <input type="text" matInput formControlName="name" />
       </mat-form-field>
+
       <mat-form-field>
         <mat-label>Email</mat-label>
-        <input type="email" matInput formControlName="emailControl" />
-        <mat-error *ngIf="emailControl?.hasError('email')">
+        <input type="email" matInput formControlName="email" />
+        <mat-error *ngIf="email?.hasError('email') && (contactNumber?.dirty || contactNumber?.touched)">
           Please enter a valid email address
         </mat-error>
       </mat-form-field>
 
       <mat-form-field>
-        <mat-label>Message</mat-label>
-        <textarea matInput formControlName="messageControl"></textarea>
+        <mat-label>Contact Number</mat-label>
+        <input type="email" matInput formControlName="contactNumber" />
+        <mat-error *ngIf="contactNumber?.hasError('pattern') && (contactNumber?.dirty || contactNumber?.touched)">
+          Please enter a valid contact number.
+        </mat-error>
       </mat-form-field>
 
-      <displaymessage messagetype="success" *ngIf="sendSuccess">Your message was successfully sent to me!</displaymessage>
-      <displaymessage messagetype="error" *ngIf="sendError">There was an error sending the message. Please try again later.</displaymessage>
-      <displaymessage messagetype="error" *ngIf="validFormError">Please fill in all fields correctly to send a message to me!.</displaymessage>
+      <mat-form-field>
+        <mat-label>Message</mat-label>
+        <textarea matInput formControlName="message"></textarea>
+      </mat-form-field>
+
+      <displaymessage messagetype="success" *ngIf="sendSuccess"
+        >Your message was successfully sent to me!</displaymessage
+      >
+      <displaymessage messagetype="error" *ngIf="sendError"
+        >There was an error sending the message. Please try again
+        later.</displaymessage
+      >
+      <displaymessage messagetype="error" *ngIf="validFormError"
+        >Please fill in all fields correctly to send a message to
+        me!.</displaymessage
+      >
 
       <app-icon-button color="primary" icon="send" display="block"
         >Send message</app-icon-button

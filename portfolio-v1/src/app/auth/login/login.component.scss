@@ -27,9 +27,30 @@
 }
 
 .login-form {
-  max-width: 450px;
+  padding: 3rem;
+  max-width: 500px;
 
   h1 {
     margin-bottom: 2rem;
+  }
+
+  .user-icon {
+    // padding-inline: 20px;
+    // padding-right: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  mat-icon {
+    color: $heading-color;
+  }
+}
+
+@media (max-width: 768px) {
+  .user-icon {
+    display: none;
+  }
+
+  .pw-button {
+    display: none;
   }
 }
