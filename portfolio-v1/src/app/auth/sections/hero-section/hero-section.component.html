@@ -7,12 +7,14 @@
         <p>Hi I am</p>
         <h1 class="hero__heading">Johannes Hueber</h1>
         <p>An emerging Full Stack Developer</p>
-        <a [href]="downloadCVEnglish" target="_blank"><app-icon-button color="primary" icon="download"
-          >Download CV EN</app-icon-button
-        ></a>
-        <a [href]="downloadCVGerman" target="_blank"><app-icon-button color="primary" icon="download"
-          >Download CV DE</app-icon-button
-        ></a>
+        <div class="hero__card--download">
+          <a [href]="downloadCVEnglish" target="_blank"><app-icon-button color="primary" icon="download"
+            >Download CV EN</app-icon-button
+          ></a>
+          <a [href]="downloadCVGerman" target="_blank"><app-icon-button color="primary" icon="download"
+            >Download CV DE</app-icon-button
+          ></a>
+        </div>
       </div>
       <!-- <div class="hero__card">
         <img src="assets/img/790.png" alt="profile pic" class="hero__profile" />

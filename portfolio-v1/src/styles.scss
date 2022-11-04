@@ -18,6 +18,7 @@ $paragraph-color: #d0d0d0;
 $action-color: #735b09;
 
 $inset-shadow: rgba(1, 27, 22, 0.25);
+$action-shadow: rgba(115, 91, 9, 0.25);
 
 // Sections
 $section-size: 2rem;
@@ -100,7 +101,7 @@ body {
 .container {
   margin: 0 auto;
   max-width: 1200px;
-  padding: 5rem 3rem;
+  padding: 8rem 3rem;
 }
 
 h1,
@@ -113,6 +114,10 @@ h3 {
 p {
   color: $paragraph-color;
   font-family: "Merriweather", serif;
+}
+
+a {
+  text-decoration: none;
 }
 
 .primary-color {

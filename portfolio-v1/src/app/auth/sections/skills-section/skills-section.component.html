@@ -1,4 +1,6 @@
 <div class="container">
     <app-section-header heading="Skills"></app-section-header>
-    <h2 class="coming-soon">Under construction...</h2>
+    <div class="skills">
+        <app-skill *ngFor="let skill of currentSkills" [skill]="skill" [id]="skill.id" (click)="onSelectSkill(skill.id)"></app-skill>
+    </div>
 </div>
