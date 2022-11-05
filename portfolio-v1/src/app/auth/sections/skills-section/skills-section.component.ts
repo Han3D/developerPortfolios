@@ -31,6 +31,12 @@ export class SkillsSectionComponent implements OnInit {
   }
 
   onSelectSkill(skillID: string) {
-
+    const selectedSkill = currentSkills.find((skill) => skill.id === skillID);
+    // console.log("✏️ ~ onSelectSkill ~ selectedSkill", selectedSkill);
+    if (selectedSkill !== undefined) {
+      // set all other selections to false;
+      // currentSkills.map(skill => skill.clicked = false);
+      selectedSkill.clicked = !selectedSkill.clicked;
+    }
   }
 }

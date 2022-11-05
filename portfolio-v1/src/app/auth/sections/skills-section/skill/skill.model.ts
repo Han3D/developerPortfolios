@@ -5,6 +5,7 @@ export class Skill {
   percentage: number;
   description: string;
   experience: number;
+  clicked: boolean;
 
   constructor(
     id: string,
@@ -20,5 +21,6 @@ export class Skill {
     this.percentage = percentage;
     this.description = description;
     this.experience = experience;
+    this.clicked = false;
   }
 }
