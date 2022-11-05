@@ -1,20 +1,26 @@
-<div class="skill" [@flipAnimation]="isClicked">
-<!-- <div class="skill" [ngClass]="{ clicked: isClicked }" [@flipAnimation]="isClicked"> -->
-  <div [hidden]="isClicked">
-      <div [@showFrontAnimation]="isClicked">
-        <img
-          [src]="'assets/img/skills/' + skill.imageName"
-          alt="skill image"
-          class="skill__img"
-        />
-        <h2 class="skill__name">{{ skill.name }}</h2>
-      </div>
+<div
+  class="skill"
+  [@flipAnimation]="isClicked"
+  data-tilt
+>
+  <div [hidden]="isClicked" class="skill__front">
+    <div [@showFrontAnimation]="isClicked">
+      <img
+        [src]="'assets/img/skills/' + skill.imageName"
+        alt="skill image"
+        class="skill__img"
+      />
+      <h2 class="skill__name">{{ skill.name }}</h2>
+    </div>
   </div>
-  <div [hidden]="!isClicked">
+  <div [hidden]="!isClicked" class="skill__back">
     <div [@showBackAnimation]="isClicked">
-      <p>{{skill.percentage}}</p>
-      <p>{{skill.description}}</p>
-      <p>{{skill.experience}}</p>
+      <app-circle-chart
+        [size]="160"
+        [percent]="skill.percentage"
+      ></app-circle-chart>
+      <!-- <p>{{ skill.description }}</p> -->
+      <p>Experience: {{ skill.experience }} <b>Years</b></p>
     </div>
   </div>
 </div>

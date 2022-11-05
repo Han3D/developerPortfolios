@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 // Angular material
 import { MatInputModule } from '@angular/material/input';
@@ -11,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
+import { MatRippleModule } from '@angular/material/core';
 
 // Own components
 import { DisplaymessageComponent } from './messages/displaymessage.component';
@@ -20,13 +22,10 @@ import { SectionHeaderComponent } from './section-header/section-header.componen
 import { FooterComponent } from './footer/footer.component';
 import { IconButtonComponent } from './icon-button/icon-button.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import {
-  ErrorStateMatcher,
-  MatRippleModule,
-  ShowOnDirtyErrorStateMatcher,
-} from '@angular/material/core';
-import { RouterModule } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { CircleChartComponent } from './circle-chart/circle-chart.component';
+
+// Other components
 
 @NgModule({
   declarations: [
@@ -37,6 +36,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     FooterComponent,
     IconButtonComponent,
     NotFoundComponent,
+    CircleChartComponent,
   ],
   imports: [
     RouterModule,
@@ -73,13 +73,13 @@ import { NotFoundComponent } from './not-found/not-found.component';
     MatRippleModule,
     NotFoundComponent,
     MatIconModule,
+    CircleChartComponent
   ],
   providers: [
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
       useValue: { appearance: 'outline' },
     },
-    { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher },
   ],
 })
 export class SharedModule {}

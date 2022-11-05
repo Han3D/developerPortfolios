@@ -1,6 +1,12 @@
 <div class="container">
-    <app-section-header heading="Skills"></app-section-header>
-    <div class="skills">
-        <app-skill *ngFor="let skill of currentSkills" [skill]="skill" [id]="skill.id" (click)="onSelectSkill(skill.id)" [isClicked]="skill.clicked"></app-skill>
-    </div>
+  <app-section-header heading="Skills"></app-section-header>
+  <div class="skills">
+    <app-skill
+      *ngFor="let skill of currentSkills"
+      [skill]="skill"
+      [id]="skill.id"
+      (click)="onSelectSkill(skill.id)"
+      [isClicked]="skill.clicked"
+    ></app-skill>
+  </div>
 </div>

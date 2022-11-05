@@ -8,67 +8,48 @@
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  // justify-content: center;
   text-align: center;
   box-shadow: 5px 10px 30px 0 $inset-shadow;
   transition: margin 250ms ease-in-out;
   // animation: flip 4000ms ease;
 
   &:hover {
-    background-color: $action-color;
-    box-shadow: 5px 10px 30px 0 $action-shadow;
+    // background-color: $action-color;
+    // box-shadow: 5px 10px 30px 0 $action-shadow;
     cursor: pointer;
 
+    // .skill__front {
+    //   .skill__img {
+    //     transform: translateY(-2px);
+    //   }
+
+    //   .skill__name {
+    //     transform: translateY(-2px);
+    //   }
+    // }
+  }
+
+  .skill__front {
     .skill__img {
-      transform: translateY(-2px);
+      transition: transform 250ms ease-in-out;
+      align-self: center;
+      max-height: 6rem;
+      margin-bottom: 2rem;
     }
 
     .skill__name {
-        transform: translateY(-2px);
+      transition: transform 250ms ease-in-out;
+      font-size: 1.3rem;
+      font-weight: 400;
     }
   }
 
-  .skill__img {
-    transition: transform 250ms ease-in-out;
+  .skill__back {
     align-self: center;
-    max-height: 6rem;
-    margin-bottom: 2rem;
+
+    p {
+      margin-top: 2rem;
+    }
   }
-
-  .skill__name {
-    transition: transform 250ms ease-in-out;
-    font-size: 1.3rem;
-    font-weight: 400;
-  }
-}
-
-.clicked {
-  animation: flip 1250ms ease;
-}
-
-@keyframes flip {
-	0% {
-		transform: perspective(400px) rotateY(0) scale(1);
-		animation-timing-function: ease-out;
-	}
-	40% {
-		transform: perspective(400px) translateZ(150px) rotateY(85deg) scale(1);
-		animation-timing-function: ease-out;
-	}
-	50% {
-		transform: perspective(400px) translateZ(150px) rotateY(85deg) scale(1);
-		animation-timing-function: ease-in;
-	}
-	// 60% {
-	// 	transform: perspective(400px) translateZ(150px) rotateY(105deg) scale(1);
-	// 	animation-timing-function: ease;
-	// }
-	80% {
-		transform: perspective(400px) rotateY(180deg) scale(.8);
-		animation-timing-function: ease-in;
-	}
-	100% {
-		transform: perspective(400px) rotateY(180deg) scale(1);
-		animation-timing-function: ease-in;
-	}
 }

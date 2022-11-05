@@ -4,7 +4,7 @@ export class Skill {
   imageName: string;
   percentage: number;
   description: string;
-  experience: number;
+  experience: string;
   clicked: boolean;
 
   constructor(
@@ -13,7 +13,7 @@ export class Skill {
     imageName: string,
     percentage: number,
     description: string,
-    experience: number
+    experience: string
   ) {
     this.id = id;
     this.name = name;

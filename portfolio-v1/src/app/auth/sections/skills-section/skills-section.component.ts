@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import VanillaTilt from 'vanilla-tilt';
 import { Skill } from './skill/skill.model';
 
 
 // Skills
 const currentSkills: Skill[] = [
-  new Skill("html", "HTML", "html.png", 10, "dummy__description", 2),
-  new Skill("css", "CSS", "css.png", 10, "dummy__description", 2),
-  new Skill("js", "Javascript", "js.png", 10, "dummy__description", 2),
-  new Skill("sql", "SQL", "sql.png", 10, "dummy__description", 2),
-  new Skill("angular", "Angular", "angular.png", 10, "dummy__description", 2),
-  new Skill("react", "React", "react.png", 10, "dummy__description", 2),
-  new Skill("go", "Go", "Go-Logo_Blue.png", 10, "dummy__description", 2),
-  new Skill("csharp", "C#", "c--4.png", 10, "dummy__description", 2),
-  new Skill("swift", "Swift", "swift.png", 10, "dummy__description", 2),
-  new Skill("git", "Git", "git.png", 10, "dummy__description", 2),
-  new Skill("java", "Java", "java.png", 10, "dummy__description", 2),
+  new Skill("html", "HTML", "html.png", 85, "dummy__description", "3+"),
+  new Skill("css", "CSS", "css.png", 90, "dummy__description", "3+"),
+  new Skill("js", "Javascript", "js.png", 70, "dummy__description", "1.5+"),
+  new Skill("sql", "SQL", "sql.png", 88, "dummy__description", "5+"),
+  new Skill("angular", "Angular", "angular.png", 75, "dummy__description", "1.5+"),
+  new Skill("react", "React", "react.png", 30, "dummy__description", "0.2"),
+  new Skill("go", "Go", "Go-Logo_Blue.png", 70, "dummy__description", "1+"),
+  new Skill("csharp", "C#", "c--4.png", 20, "dummy__description", "0.2"),
+  new Skill("swift", "Swift", "swift.png", 35, "dummy__description", "0.5"),
+  new Skill("git", "Git", "git.png", 60, "dummy__description", "3+"),
+  new Skill("java", "Java", "java.png", 65, "dummy__description", "2+"),
 ];
 
 @Component({
@@ -28,6 +29,7 @@ export class SkillsSectionComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    // VanillaTilt.init(document.querySelector('.vTilt') as any);
   }
 
   onSelectSkill(skillID: string) {

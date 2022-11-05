@@ -11,13 +11,17 @@ import { ContactComponent } from './contact/contact.component';
 import { LoggingInterceptorService } from './shared/logging/logging-interceptor.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
+// Import ng-circle-progress
+// import { NgCircleProgressModule } from 'ng-circle-progress';
+
 @NgModule({
   declarations: [AppComponent, ContactComponent],
   imports: [
     AppRoutingModule,
     SharedModule,
     AuthModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

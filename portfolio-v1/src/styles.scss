@@ -17,8 +17,13 @@ $heading-color: #ffffff;
 $paragraph-color: #d0d0d0;
 $action-color: #735b09;
 
-$inset-shadow: rgba(1, 27, 22, 0.25);
 $action-shadow: rgba(115, 91, 9, 0.25);
+$inset-shadow: rgba(1, 27, 22, 0.25);
+$dark-shadow: rgba(1, 20, 16, 0.25);
+$dark-shadow-smooth: rgba(1, 20, 16, 0.20);
+$dark-shadow-smoother: rgba(1, 20, 16, 0.15);
+$dark-shadow-smoothest: rgba(1, 20, 16, 0.05);
+$light-shadow: rgba(3, 60, 49, 0.7);
 
 // Sections
 $section-size: 2rem;

@@ -4,12 +4,15 @@ import { AuthGuard } from './auth/auth.guard';
 import { LoggedInAuthGuard } from './auth/logged-in-auth.guard';
 import { LoginComponent } from './auth/login/login.component';
 import { SectionsComponent } from './auth/sections/sections.component';
+import { SkillsSectionComponent } from './auth/sections/skills-section/skills-section.component';
 import { ContactComponent } from './contact/contact.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
-  { path: 'home', component: SectionsComponent, canActivate: [AuthGuard] },
+  { path: 'home', component: SectionsComponent, canActivate: [AuthGuard], children: [
+    {path: 'skillsSection', component: SkillsSectionComponent}
+  ] },
   { path: 'login', component: LoginComponent, canActivate: [LoggedInAuthGuard]},
   { path: 'contact', component: ContactComponent},
   { path: 'skills', component: SectionsComponent, canActivate: [AuthGuard] },

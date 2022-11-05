@@ -7,7 +7,6 @@ import {
   trigger,
 } from '@angular/animations';
 import { Component, HostListener, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
 
@@ -48,7 +47,6 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private firebaseAuth: AngularFireAuth,
     private router: Router
   ) {}
 
@@ -90,6 +88,10 @@ export class HeaderComponent implements OnInit {
       .finally(() => {
         this.router.navigate(['login']);
       });
+  }
+
+  onScrollToSkills() {
+    this.router.navigate([], { fragment: "skillSection" });
   }
 
   /* ngOnDestroy() {
