@@ -9,25 +9,23 @@ import { AuthModule } from './auth/auth.module';
 // Contacts
 import { ContactComponent } from './contact/contact.component';
 import { LoggingInterceptorService } from './shared/logging/logging-interceptor.service';
+import { ImpressumComponent } from './impressum/impressum.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
-// Import ng-circle-progress
-// import { NgCircleProgressModule } from 'ng-circle-progress';
+import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from 'ng-recaptcha';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
-  declarations: [AppComponent, ContactComponent],
-  imports: [
-    AppRoutingModule,
-    SharedModule,
-    AuthModule,
-    FontAwesomeModule,
-    
+  declarations: [AppComponent, ContactComponent, ImpressumComponent],
+  imports: [AppRoutingModule, SharedModule, AuthModule, FontAwesomeModule, RecaptchaV3Module],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoggingInterceptorService,
+      multi: true,
+    },
+    { provide: RECAPTCHA_V3_SITE_KEY, useValue: environment.recaptchaSitekey },
   ],
-  providers: [{
-    provide: HTTP_INTERCEPTORS,
-    useClass: LoggingInterceptorService,
-    multi: true,
-  },],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

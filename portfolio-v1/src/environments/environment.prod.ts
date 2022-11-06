@@ -10,5 +10,6 @@ export const environment = {
     messagingSenderId: '470924607393',
     measurementId: 'G-LTTLXMBLJ1',
   },
-  production: true
+  production: true,
+  recaptchaSitekey: '6LfnCeQiAAAAANR9smvBrVya69fiqhPIsRoH8Y4P'
 };

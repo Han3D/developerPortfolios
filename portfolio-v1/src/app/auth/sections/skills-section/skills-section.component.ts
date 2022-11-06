@@ -16,6 +16,7 @@ const currentSkills: Skill[] = [
   new Skill("swift", "Swift", "swift.png", 35, "dummy__description", "0.5"),
   new Skill("git", "Git", "git.png", 60, "dummy__description", "3+"),
   new Skill("java", "Java", "java.png", 65, "dummy__description", "2+"),
+  new Skill("php", "PHP", "php.png", 55, "dummy__description", "1+"),
 ];
 
 @Component({
