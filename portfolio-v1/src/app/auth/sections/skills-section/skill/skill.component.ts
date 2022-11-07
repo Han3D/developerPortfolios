@@ -9,7 +9,7 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostBinding, HostListener, Input, OnInit } from '@angular/core';
 import VanillaTilt from 'vanilla-tilt';
 import { Skill } from './skill.model';
 
@@ -140,6 +140,9 @@ export class SkillComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    VanillaTilt.init(document.querySelector('#' + this.skill.id) as any);
+    // Check if it is a mobile device
+    if (window.innerWidth > 1280) {
+      VanillaTilt.init(document.querySelector('#' + this.skill.id) as any);
+    }
   }
 }

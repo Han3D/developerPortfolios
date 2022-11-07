@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
   // Creates the login form
   createLoginForm() {
     this.loginForm = this.fb.group({
-      emailControl: ['', [Validators.required, Validators.email]],
+      emailControl: ['', [Validators.required]],
       passwordControl: ['', [Validators.required]],
     });
   }
@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
       console.log('✏️ ~ onLogin ~ userDetails', userDetails);
 
       const isAuthenticated = this.authService.login(
-        userDetails.emailControl,
+        userDetails.emailControl + "@han3dportfolio.com",
         userDetails.passwordControl
       );
 

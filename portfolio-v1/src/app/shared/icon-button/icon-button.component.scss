@@ -7,12 +7,12 @@
   // color: transparent;
   font-weight: 500;
   border-radius: 8px;
-  transition: transform 150ms ease-in;
+  transition: transform 200ms ease-out;
   font-size: 1em;
 
   &:hover {
     cursor: pointer;
-    transform: translateY(-4px);
+    transform: translateY(-2px);
   }
 
   .btn__icon {
@@ -21,15 +21,30 @@
 }
 
 .primary {
-  background: linear-gradient(135deg, $action-color-lighter, $action-color);
+  // background: linear-gradient(135deg, $action-color-lighter, red);
+  background: linear-gradient(-45deg, $background-color-lightest, $background-color-light, $action-color, $action-color-lighter);
+	background-size: 400% 400%;
   color: $heading-color;
   box-shadow: none;
 
   //   box-shadow: 0 6px 15px -4px $action-color;
 
   &:hover {
-    box-shadow: 0 8px 20px -4px $action-color;
+    animation: animateBackground 4s ease-in-out infinite;
+    box-shadow: 0 6px 20px 0px $action-shadow;
   }
+}
+
+@keyframes animateBackground {
+  0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 .outlined {

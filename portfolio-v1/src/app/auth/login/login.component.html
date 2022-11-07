@@ -8,13 +8,10 @@
     (ngSubmit)="onLogin()"
   >
     <mat-form-field>
-      <mat-label>Email</mat-label>
+      <mat-label>Benutzername</mat-label>
       <input type="email" matInput formControlName="emailControl" />
       <!-- <fa-icon [icon]="faUserTie" matSuffix></fa-icon> -->
       <mat-icon matSuffix class="user-icon">email</mat-icon>
-      <mat-error *ngIf="emailControl?.hasError('email')">
-        Please enter a valid email address
-      </mat-error>
     </mat-form-field>
 
     <mat-form-field>
@@ -47,7 +44,7 @@
       me!.</displaymessage
     >
 
-    <app-icon-button color="primary" icon="send" display="block"
+    <app-icon-button color="primary" icon="more" display="block"
       >Login</app-icon-button
     >
   </form>

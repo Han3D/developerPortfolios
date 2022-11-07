@@ -85,16 +85,16 @@
 }
 
 .about--wrap {
-  margin-top: 7rem;
+  margin-top: 2rem;
   position: relative;
-  z-index: 30;
-  filter: drop-shadow(0px 5px 15px $inset-shadow);
+  // z-index: 30;
+  // filter: drop-shadow(0px 5px 15px $inset-shadow);
 }
 
-.about--clip {
-  padding-top: 8rem;
-  clip-path: polygon(0 0, 100% 26%, 100% 100%, 0% 100%);
-}
+// .about--clip {
+//   padding-top: 8rem;
+//   clip-path: polygon(0 0, 100% 26%, 100% 100%, 0% 100%);
+// }
 
 @media (max-width: 768px) {
   .about--clip {

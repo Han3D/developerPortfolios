@@ -3,7 +3,7 @@
 .circle-chart {
     position: relative;
     background-color: red;
-    background-color: $background-color-lighter;
+    background-color: $background-color-light;
 
     .outer {
         border-radius: 100vh;
@@ -18,7 +18,7 @@
         justify-content: center;
         box-shadow: inset 4px 4px 6px -1px $dark-shadow-smooth,
         inset -4px -4px 6px -1px $light-shadow,
-        -0.5px -0.5px 0px $background-color-lighter,
+        -0.5px -0.5px 0px $background-color-light,
         0.5px 0.5px 0px $dark-shadow-smoother,
         0px 12px 10px -10px $dark-shadow-smoothest;
     }
