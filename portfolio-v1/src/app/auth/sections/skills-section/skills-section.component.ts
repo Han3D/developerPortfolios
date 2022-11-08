@@ -8,7 +8,7 @@ const currentSkills: Skill[] = [
   new Skill("html", "HTML", "html.png", 85, "dummy__description", "3+"),
   new Skill("css", "CSS", "css.png", 90, "dummy__description", "3+"),
   new Skill("js", "Javascript", "js.png", 70, "dummy__description", "1.5+"),
-  new Skill("sql", "SQL", "sql.png", 88, "dummy__description", "5+"),
+  new Skill("sql", "SQL", "sql.png", 75, "dummy__description", "4+"),
   new Skill("angular", "Angular", "angular.png", 75, "dummy__description", "1.5+"),
   new Skill("react", "React", "react.png", 30, "dummy__description", "0.2"),
   new Skill("go", "Go", "Go-Logo_Blue.png", 70, "dummy__description", "1+"),
