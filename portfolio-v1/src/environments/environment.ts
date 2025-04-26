@@ -1,12 +1,13 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-
+// These keys are deleted. When i created this project i was a junior developer and didnt know it better. The keys cannot be absued anymore. If you dont believe me. Try to use them. Good luck!!!
 export const environment = {
   firebase: {
     projectId: 'han3d-portfolio',
     appId: '1:470924607393:web:289ae13beb8860a3f115e0',
-    databaseURL: 'https://han3d-portfolio-default-rtdb.europe-west1.firebasedatabase.app',
+    databaseURL:
+      'https://han3d-portfolio-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'han3d-portfolio.appspot.com',
     locationId: 'europe-west',
     apiKey: 'AIzaSyClESf_x9XgBwOu5FEZgXt8GjKxv4xDMh0',
@@ -15,7 +16,7 @@ export const environment = {
     measurementId: 'G-LTTLXMBLJ1',
   },
   production: false,
-  recaptchaSitekey: '6LfnCeQiAAAAANR9smvBrVya69fiqhPIsRoH8Y4P'
+  recaptchaSitekey: '6LfnCeQiAAAAANR9smvBrVya69fiqhPIsRoH8Y4P',
 };
 
 /*
