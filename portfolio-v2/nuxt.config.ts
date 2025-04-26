@@ -1,14 +1,24 @@
-import tailwindcss from "@tailwindcss/vite";
+import tailwindcss from '@tailwindcss/vite'
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
-  css: ["~/assets/css/main.css"],
+	devtools: { enabled: true },
+	css: ['~/assets/css/main.css'],
 
-  modules: ["@nuxt/eslint", "@nuxt/fonts", "@nuxt/scripts", "motion-v/nuxt"],
+	modules: ['@nuxt/eslint', '@nuxt/fonts', '@nuxt/scripts', 'motion-v/nuxt', '@nuxtjs/supabase'],
 
-  vite: {
-    plugins: [tailwindcss()],
-  },
+	vite: {
+		plugins: [tailwindcss()],
+	},
 
-  compatibilityDate: "2024-11-01",
-});
+	supabase: {
+		redirectOptions: {
+			login: '/login',
+			callback: '/confirm',
+			include: ['/downloads', '/admin'],
+			exclude: ['/', '/contact'],
+			saveRedirectToCookie: false,
+		},
+	},
+
+	compatibilityDate: '2024-11-01',
+})

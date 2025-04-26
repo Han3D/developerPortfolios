@@ -1,1 +1,67 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+@theme {
+	/* --color-bg-light-50: #fcf9ee;
+	--color-bg-light-100: #f7f0ce;
+	--color-bg-light-200: #eedf99;
+	--color-bg-light-300: #e6cb63;
+	--color-bg-light-400: #e0b83f;
+	--color-bg-light-500: #d79b29;
+	--color-bg-light-600: #be7a21;
+	--color-bg-light-700: #9e5a1f;
+	--color-bg-light-800: #81471f;
+	--color-bg-light-900: #6b3b1c;
+	--color-bg-light-950: #3d1e0b; */
+
+	--color-accent-50: #fefbe8;
+	--color-accent-100: #fdf6c4;
+	--color-accent-200: #fcea8c;
+	--color-accent-300: #fbdb5b;
+	--color-accent-400: #f7c118;
+	--color-accent-500: #e7a80b;
+	--color-accent-600: #c78107;
+	--color-accent-700: #9f5c09;
+	--color-accent-800: #834810;
+	--color-accent-900: #703b13;
+	--color-accent-950: #411e07;
+
+	/* --color-yellow-sea-50: #fffdea;
+	--color-yellow-sea-100: #fff6c5;
+	--color-yellow-sea-200: #ffed85;
+	--color-yellow-sea-300: #ffdd46;
+	--color-yellow-sea-400: #ffca1b;
+	--color-yellow-sea-500: #ffa902;
+	--color-yellow-sea-600: #e27f00;
+	--color-yellow-sea-700: #bb5802;
+	--color-yellow-sea-800: #984408;
+	--color-yellow-sea-900: #7c380b;
+	--color-yellow-sea-950: #481b00; */
+
+	/* --color-wasabi-50: #feffe5;
+	--color-wasabi-100: #faffc8;
+	--color-wasabi-200: #f4ff96;
+	--color-wasabi-300: #e7fc5a;
+	--color-wasabi-400: #d6f328;
+	--color-wasabi-500: #b8d909;
+	--color-wasabi-600: #8fae02;
+	--color-wasabi-700: #769108;
+	--color-wasabi-800: #56680c;
+	--color-wasabi-900: #475710;
+	--color-wasabi-950: #253102; */
+
+	--color-primary-50: #fdffe6;
+	--color-primary-100: #fafec9;
+	--color-primary-200: #f2fd99;
+	--color-primary-300: #e5f85e;
+	--color-primary-400: #d4ee2d;
+	--color-primary-500: #b6d40e;
+	--color-primary-600: #8eaa06;
+	--color-primary-700: #6b810a;
+	--color-primary-800: #54660e;
+	--color-primary-900: #425010;
+	--color-primary-950: #253003;
+}
+
+.container {
+	@apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+}
