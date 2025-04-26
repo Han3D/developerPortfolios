@@ -1,9 +1,10 @@
 <template>
-	<div>
+	<div class="container">
 		<SharedNavigation />
-		<main class="container mt-20">
+		<main class="container mt-20 min-h-screen">
 			<slot />
 		</main>
+		<SharedFooter />
 	</div>
 </template>
 
