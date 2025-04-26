@@ -2,12 +2,8 @@
 	<h1 class="text-primary-800 mb-8 text-center text-4xl font-extrabold drop-shadow-lg md:text-5xl">
 		Get in Touch
 	</h1>
-	<section
-		class="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br px-4 py-12"
-	>
-		<form
-			class="border-primary-100 w-full max-w-lg space-y-6 rounded-2xl border bg-white p-8 shadow-xl"
-		>
+	<section class="flex min-h-screen flex-col items-center">
+		<form class="w-full max-w-lg space-y-6 p-8">
 			<div>
 				<label for="name" class="text-primary-900 mb-2 block text-lg font-medium">Name</label>
 				<input
