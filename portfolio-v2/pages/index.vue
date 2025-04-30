@@ -28,6 +28,7 @@
 					Download CV
 				</a>
 			</div>
+			<span>bla</span>
 			<div class="flex justify-center gap-6">
 				<a
 					href="https://github.com/Han3D"
