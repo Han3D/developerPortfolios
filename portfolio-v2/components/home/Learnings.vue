@@ -1,7 +1,7 @@
 <template>
 	<section class="py-24">
 		<div class="container flex flex-col items-center gap-12 px-4 md:flex-row">
-			<div v-motion-fade-visible class="flex flex-1 flex-col gap-6">
+			<div class="flex flex-1 flex-col gap-6">
 				<h2 class="primary-900 mb-2 text-3xl font-bold md:text-4xl">Learning Goals</h2>
 				<ul class="text-primary-800 list-disc space-y-2 pl-6 text-lg">
 					<li>
@@ -20,7 +20,7 @@
 					</li>
 				</ul>
 			</div>
-			<div v-motion-pop-visible class="flex flex-1 items-center justify-center">
+			<div class="flex flex-1 items-center justify-center">
 				<img
 					src="/img/tablet.png"
 					alt="Learning Goals"

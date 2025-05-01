@@ -1,7 +1,7 @@
 <template>
 	<section class="py-24">
 		<div class="container mx-auto flex flex-col items-center gap-12 px-4 md:flex-row">
-			<div v-motion-fade-visible class="flex flex-1 flex-col gap-6">
+			<div class="flex flex-1 flex-col gap-6">
 				<h2 class="text-primary-900 mb-2 text-3xl font-bold md:text-4xl">About Me</h2>
 				<p class="text-primary-800 text-lg">
 					I'm a
@@ -16,7 +16,7 @@
 					performance.
 				</p>
 			</div>
-			<div v-motion-pop-visible class="flex flex-1 justify-center">
+			<div class="flex flex-1 justify-center">
 				<img
 					src="/img/eatramen.jpg"
 					alt="Johannes Hueber"

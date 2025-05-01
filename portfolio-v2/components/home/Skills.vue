@@ -1,15 +1,9 @@
 <template>
 	<section class="py-24">
 		<div class="container mx-auto px-4">
-			<h2
-				v-motion-fade-visible
-				class="text-primary-900 mb-10 text-center text-3xl font-bold md:text-4xl"
-			>
-				Skills
-			</h2>
+			<h2 class="text-primary-900 mb-10 text-center text-3xl font-bold md:text-4xl">Skills</h2>
 			<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
 				<div
-					v-motion-pop-visible
 					class="border-primary-100 flex flex-col items-center rounded-2xl border bg-white p-8 shadow-xl transition-transform duration-300 hover:scale-105"
 				>
 					<img src="/img/skills/js.png" alt="JavaScript" class="animate-spin-slow mb-4 h-16 w-16" />
@@ -19,7 +13,6 @@
 					</p>
 				</div>
 				<div
-					v-motion-pop-visible
 					class="border-primary-100 flex flex-col items-center rounded-2xl border bg-white p-8 shadow-xl transition-transform duration-300 hover:scale-105"
 				>
 					<img
@@ -33,7 +26,6 @@
 					</p>
 				</div>
 				<div
-					v-motion-pop-visible
 					class="border-primary-100 flex flex-col items-center rounded-2xl border bg-white p-8 shadow-xl transition-transform duration-300 hover:scale-105"
 				>
 					<img src="/img/skills/git.png" alt="Git & DevOps" class="mb-4 h-16 w-16 animate-pulse" />

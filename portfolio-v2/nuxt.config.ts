@@ -1,32 +1,36 @@
 import tailwindcss from '@tailwindcss/vite'
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-								devtools: { enabled: true },
-								css: ['~/assets/css/main.css'],
+	devtools: { enabled: true },
+	css: ['~/assets/css/main.css'],
 
-								modules: [
-								  '@nuxt/eslint',
-								  '@nuxt/fonts',
-								  '@nuxt/scripts',
-								  'motion-v/nuxt',
-								  '@nuxtjs/supabase',
-								  '@nuxt/icon',
-								  '@nuxtjs/seo',
-								],
+	modules: [
+		'@nuxt/eslint',
+		'@nuxt/fonts',
+		'@nuxt/scripts',
+		'motion-v/nuxt',
+		'@nuxtjs/supabase',
+		'@nuxt/icon',
+		'@nuxtjs/seo',
+	],
 
-								vite: {
-																plugins: [tailwindcss()],
-								},
+	fonts: {
+		families: [{ name: 'Roboto', provider: 'google' }],
+	},
 
-								supabase: {
-																redirectOptions: {
-																								login: '/login',
-																								callback: '/confirm',
-																								include: ['/downloads', '/admin'],
-																								exclude: ['/', '/contact'],
-																								saveRedirectToCookie: false,
-																},
-								},
+	vite: {
+		plugins: [tailwindcss()],
+	},
 
-								compatibilityDate: '2024-11-01',
+	supabase: {
+		redirectOptions: {
+			login: '/login',
+			callback: '/confirm',
+			include: ['/downloads', '/admin'],
+			exclude: ['/', '/contact'],
+			saveRedirectToCookie: false,
+		},
+	},
+
+	compatibilityDate: '2024-11-01',
 })
