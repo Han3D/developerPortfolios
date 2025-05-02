@@ -1,24 +1,25 @@
 <template>
-	<li>
-		<a
-			:href="to"
-			class="hover:text-accent-600 text-sm font-medium transition-colors"
-			:class="activeClasses"
-		>
+	<li
+		:class="activeClasses"
+		class="hover:text-accent-500 flex items-center gap-2 text-sm font-medium transition-colors"
+	>
+		<Icon v-if="icon" :name="icon" />
+		<a :href="to">
 			{{ name }}
 		</a>
 	</li>
 </template>
 
 <script setup lang="ts">
-const { to, name, active } = defineProps<{
+const { to, name, active, icon } = defineProps<{
 	to: string
 	name: string
 	active: boolean
+	icon?: string
 }>()
 
 const activeClasses = computed(() => {
-	return active ? 'text-accent-600 border-b border-accent-500' : 'text-accent-700'
+	return active ? 'text-accent-500' : 'text-accent-600'
 })
 </script>
 
