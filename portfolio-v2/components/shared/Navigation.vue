@@ -1,6 +1,6 @@
 <template>
 	<nav
-		class="border-accent-800 dark:bg-primary-900/90 sticky top-4 z-50 flex items-center justify-between rounded-full border bg-white/80 px-6 py-2 shadow-lg backdrop-blur-md"
+		class="border-accent-800 bg-accent-900/80 dark:bg-primary-900/90 sticky top-4 z-50 flex items-center justify-between rounded-full border px-6 py-2 shadow-lg backdrop-blur-md"
 	>
 		<div class="flex items-center gap-4">
 			<img src="/img/logo.png" alt="Logo" class="h-8 w-8" />

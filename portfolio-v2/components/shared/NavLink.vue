@@ -18,7 +18,7 @@ const { to, name, active } = defineProps<{
 }>()
 
 const activeClasses = computed(() => {
-	return active ? 'text-accent-700 border-b border-accent-600' : 'text-accent-900'
+	return active ? 'text-accent-600 border-b border-accent-500' : 'text-accent-700'
 })
 </script>
 

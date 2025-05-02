@@ -1,8 +1,8 @@
 <template>
 	<section class="flex flex-col items-center py-12 md:items-start">
-		<span class="text-accent-800 mb-2 font-semibold">Hi I am</span>
-		<h1 class="mb-4 text-4xl font-black text-black md:text-7xl">Johannes Hueber</h1>
-		<p class="text-primary-700 mb-8 font-medium">
+		<span class="text-accent-600 mb-2 font-semibold">Hi I am</span>
+		<h1 class="mb-4 text-4xl font-black text-white md:text-7xl">Johannes Hueber</h1>
+		<p class="mb-8 text-neutral-400">
 			Creative Full Stack Developer & Designer passionate about building beautiful, performant web
 			experiences.
 		</p>
