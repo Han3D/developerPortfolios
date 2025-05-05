@@ -1,30 +1,32 @@
 <template>
 	<section class="flex flex-col items-center py-12 md:items-start">
-		<span class="mb-2 font-semibold text-neutral-300">Hi I am</span>
-		<h1 class="mb-4 text-4xl font-black tracking-tight text-white md:text-7xl">Johannes Hueber</h1>
+		<span class="mb-2 font-semibold text-neutral-400">Hi I am</span>
+		<h1 class="hero__heading mb-2 text-6xl font-black tracking-tight text-white md:text-9xl">
+			Johannes Hueber
+		</h1>
 		<p class="mb-8 text-pretty text-neutral-400">
 			Creative Full Stack Developer with a sprinkle of Dev Ops.
 		</p>
 		<div class="mb-10 flex items-center gap-4">
 			<UiButton to="/contact">Contact Me</UiButton>
 			<UiButton to="/downloads">Download CV</UiButton>
-		</div>
-		<div class="flex justify-center gap-6">
 			<a
 				href="https://github.com/Han3D"
 				target="_blank"
+				rel="noopener noreferrer"
 				aria-label="GitHub"
-				class="text-accent-700 hover:text-accent-600 text-3xl transition"
+				class="hover:text-primary-500 text-primary-700 transition-colors"
 			>
-				<Icon name="mdi:github" />
+				<Icon name="lucide:github" class="size-6" />
 			</a>
 			<a
-				href="https://www.linkedin.com/in/johannes-hueber-66731924b/"
+				href="https://www.linkedin.com/in/han3d"
 				target="_blank"
+				rel="noopener noreferrer"
 				aria-label="LinkedIn"
-				class="text-accent-700 hover:text-accent-600 text-3xl transition"
+				class="hover:text-primary-500 text-primary-700 transition-colors"
 			>
-				<Icon name="mdi:linkedin" />
+				<Icon name="lucide:linkedin" class="size-6" />
 			</a>
 		</div>
 	</section>
@@ -32,4 +34,22 @@
 
 <script setup lang="ts"></script>
 
-<style scoped></style>
+<style scoped>
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+	.hero__heading {
+		color: transparent;
+
+		/* background-image: linear-gradient(90deg, white,red, white); */
+		background-image: linear-gradient(
+			120deg,
+			white,
+			white 40%,
+			var(--color-accent-600) 60%,
+			var(--color-accent-300) 80%,
+			white
+		);
+		background-clip: text;
+		-webkit-background-clip: text;
+	}
+}
+</style>

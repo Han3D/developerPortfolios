@@ -8,8 +8,11 @@
 </template>
 
 <script setup lang="ts">
-const { to } = defineProps<{
+type Color = 'primary' | 'accent'
+
+const { to, color = 'primary' } = defineProps<{
 	to?: string
+	color?: Color
 }>()
 
 const baseClasses =
