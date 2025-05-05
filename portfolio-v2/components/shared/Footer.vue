@@ -1,6 +1,6 @@
 <template>
 	<footer class="flex items-center justify-between space-x-8 py-6">
-		<p class="text-accent-700 text-xs font-medium">Han3D @ 2025 All Rights Reserved</p>
+		<span class="text-accent-700 text-sm font-medium">Han3D @ 2025 All Rights Reserved</span>
 		<span class="border-primary-800 hidden h-1 grow border-b md:inline-block"></span>
 		<div class="flex space-x-4">
 			<a
