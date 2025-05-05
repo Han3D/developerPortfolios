@@ -1,7 +1,7 @@
 <template>
 	<section class="py-24">
 		<UiSectionHeading>About Me</UiSectionHeading>
-		<p class="text-pretty text-neutral-300">
+		<p>
 			Mein Name ist Johannes Hueber und ich bin 31 Jahre alt. Mein Informatikstudium habe ich mit
 			dem Master of Science abgeschlossen. Im Laufe meines Studiums habe ich immer mehr Freude daran
 			entwickelt, Dinge zu gestalten, langsam wachsen zu sehen und so lange daran zu arbeiten, bis

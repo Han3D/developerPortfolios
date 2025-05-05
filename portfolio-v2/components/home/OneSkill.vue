@@ -1,6 +1,5 @@
 <template>
-	<UiSectionHeading>Projects</UiSectionHeading>
-	<p>Coming soon...</p>
+	<div></div>
 </template>
 
 <script setup lang="ts"></script>
