@@ -1,27 +1,19 @@
 <template>
 	<section class="py-24">
-		<div class="flex flex-1 flex-col gap-6">
-			<h2 class="text-primary-900 mb-2 text-3xl font-bold md:text-4xl">About Me</h2>
-			<p class="text-primary-800 text-lg">
-				I'm a
-				<span class="text-accent-600 font-semibold">Full Stack Developer</span>
-				with a passion for building modern web applications and a growing interest in
-				<span class="text-accent-600 font-semibold">DevOps</span>
-				and infrastructure. I enjoy working across the stack, from beautiful frontends to robust
-				backends, and love automating workflows to make development smoother.
-			</p>
-			<p class="text-primary-800 text-lg">
-				I thrive in creative environments and always look for ways to improve user experience and
-				performance.
-			</p>
-		</div>
-		<div class="flex flex-1 justify-center">
-			<img
-				src="/img/eatramen.jpg"
-				alt="Johannes Hueber"
-				class="border-accent-200 h-72 w-72 rounded-2xl border-4 object-cover shadow-2xl"
-			/>
-		</div>
+		<UiSectionHeading>About Me</UiSectionHeading>
+		<p class="text-pretty text-neutral-300">
+			Mein Name ist Johannes Hueber und ich bin 31 Jahre alt. Mein Informatikstudium habe ich mit
+			dem Master of Science abgeschlossen. Im Laufe meines Studiums habe ich immer mehr Freude daran
+			entwickelt, Dinge zu gestalten, langsam wachsen zu sehen und so lange daran zu arbeiten, bis
+			etwas Beeindruckendes entstanden ist. Außerdem lerne ich gerne neue Technologien und
+			Programmiersprachen, um mein so Wissen zu erweitern.
+			<br />
+			<br />
+			My name is Johannes Hueber and I am 31 years old. I graduated with a Master of Science in
+			Computer Science. During my studies I have developed more and more joy in designing things,
+			watching them grow slowly and working on them until something impressive has been created. I
+			also enjoy learning new technologies and programming languages to expand my so knowledge.
+		</p>
 	</section>
 </template>
 

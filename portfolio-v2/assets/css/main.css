@@ -98,14 +98,14 @@
 	--color-primary-950: #000a08;
 }
 
-.container {
-	@apply mx-auto max-w-3xl px-4 sm:px-6 lg:px-8;
-}
-
 html {
 	@apply bg-primary-900 scroll-smooth;
 }
 
 body {
 	font-family: 'Raleway', sans-serif;
+}
+
+.container {
+	@apply mx-auto max-w-3xl px-4 sm:px-6 lg:px-8;
 }
