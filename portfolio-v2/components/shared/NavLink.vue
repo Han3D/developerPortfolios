@@ -3,7 +3,7 @@
 		:class="activeClasses"
 		class="hover:text-accent-500 flex items-center gap-2 text-sm font-medium transition-colors"
 	>
-		<Icon v-if="icon" :name="icon" />
+		<!-- <Icon v-if="icon" :name="icon" /> -->
 		<a :href="to">
 			{{ name }}
 		</a>

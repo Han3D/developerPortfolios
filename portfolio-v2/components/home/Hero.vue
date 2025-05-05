@@ -42,7 +42,9 @@
 		/* background-image: linear-gradient(90deg, white,red, white); */
 		background-image: linear-gradient(
 			120deg,
-			white,
+			var(--color-primary-400),
+			var(--color-primary-800) 22%,
+			white 22%,
 			white 40%,
 			var(--color-accent-600) 60%,
 			var(--color-accent-300) 80%,
