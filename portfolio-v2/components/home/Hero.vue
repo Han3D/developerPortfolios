@@ -1,7 +1,7 @@
 <template>
 	<section class="flex flex-col items-center py-12 md:items-start">
 		<span class="mb-2 font-semibold text-neutral-300">Hi I am</span>
-		<h1 class="mb-4 text-4xl font-black text-white md:text-7xl">Johannes Hueber</h1>
+		<h1 class="mb-4 text-4xl font-black tracking-tight text-white md:text-7xl">Johannes Hueber</h1>
 		<p class="mb-8 text-pretty text-neutral-400">
 			Creative Full Stack Developer with a sprinkle of Dev Ops.
 		</p>

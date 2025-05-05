@@ -13,7 +13,7 @@ const { to } = defineProps<{
 }>()
 
 const baseClasses =
-	'bg-accent-700/75 border border-accent-600 hover:bg-accent-600 w-full rounded-lg py-3 px-4 font-medium text-white transition whitespace-nowrap'
+	'bg-accent-700/75 border border-accent-600 hover:bg-accent-600 w-full rounded-lg py-2 px-4 font-medium text-sm text-white transition whitespace-nowrap'
 </script>
 
 <style scoped></style>
