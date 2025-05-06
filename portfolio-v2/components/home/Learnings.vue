@@ -1,27 +1,46 @@
 <template>
 	<section class="py-24">
 		<UiSectionHeading>Learning Goals</UiSectionHeading>
-		<div
-			ref="cloudContainer"
-			class="relative mx-auto mt-12 h-[420px] w-full max-w-3xl sm:h-[500px] md:h-[600px]"
-		>
-			<motion.div
-				v-for="item in words"
-				:key="item.text"
-				:drag-constraints="cloudContainer"
-				drag
-				:initial="item.initial"
-				:animate="item.animate"
-				:transition="item.transition"
-				class="absolute"
-				:style="{ top: item.top, left: item.left, zIndex: item.z }"
+		<div class="grid grid-cols-1 gap-8">
+			<div>
+				<p>
+					Eine Learning Roadmap habe ich deswegen aufgestellt, weil mich neue Technologien
+					faszinieren und ich mich weiter verbessern möchte. Mit dieser beschäftige ich mich stetig
+					in meiner Freizeit weiter. Zudem finde ich es im Beruf des Software - entwicklers /
+					engineers ohnehin wichtig sich fortwährend weiterzubilden. Zu sehen welche erstaunlichen
+					Techniken über die Zeit gefunden werden, um bekannte Probleme in der Planung, Entwicklung
+					und Veröffentlichung von Software zu beheben, ist für mich sehr interessant.
+					<br />
+					<br />
+					I have set up a learning roadmap because I am fascinated by new technologies and want to
+					improve myself further. I am constantly working on this in my free time. In addition, I
+					think it is important in the profession of a software developer / engineer to keep
+					learning. To see what amazing techniques are found over time to fix known problems in the
+					planning, development and release of software is very interesting to me.
+				</p>
+			</div>
+			<div
+				ref="cloudContainer"
+				class="relative mx-auto mt-12 h-[420px] w-full max-w-3xl sm:h-[500px] md:h-[600px]"
 			>
-				<div
-					:class="item.class + ' cursor-pointer transition-transform select-none hover:scale-110'"
+				<motion.div
+					v-for="item in words"
+					:key="item.text"
+					:drag-constraints="cloudContainer"
+					drag
+					:initial="item.initial"
+					:animate="item.animate"
+					:transition="item.transition"
+					class="absolute"
+					:style="{ top: item.top, left: item.left, zIndex: item.z }"
 				>
-					{{ item.text }}
-				</div>
-			</motion.div>
+					<div
+						:class="item.class + ' cursor-pointer transition-transform select-none hover:scale-110'"
+					>
+						{{ item.text }}
+					</div>
+				</motion.div>
+			</div>
 		</div>
 	</section>
 </template>
