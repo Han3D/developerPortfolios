@@ -12,7 +12,7 @@
 			class="bg-primary-800/40 border-primary-700/40 flex flex-col items-center justify-center rounded-lg border p-6 backface-hidden"
 			style="backface-visibility: hidden; transform-style: preserve-3d; transform: translateZ(25px)"
 		>
-			<img v-if="skill.img" :src="'img/skills/' + skill.img" alt="" class="mb-4 size-16" />
+			<img v-if="skill.img" :src="'img/skills/' + skill.img" alt="" class="mb-4 size-20" />
 			<h3 class="text-lg font-bold text-neutral-200">{{ skill.name }}</h3>
 		</div>
 		<!-- Back Side -->
@@ -20,8 +20,33 @@
 			class="bg-primary-800/40 border-primary-800 absolute inset-0 flex flex-col items-center justify-center rounded-lg border p-6 backface-hidden"
 			style="backface-visibility: hidden; transform: rotateY(180deg) translateZ(25px)"
 		>
-			<span>{{ skill.percent }}</span>
-			<p class="px-4 text-base">{{ skill.experience }} Years</p>
+			<div class="mb-4 flex size-20 items-center justify-center">
+				<svg class="h-full w-full -rotate-90 transform" viewBox="0 0 36 36">
+					<circle
+						class="text-accent-700/30"
+						stroke="currentColor"
+						stroke-width="4"
+						fill="none"
+						cx="18"
+						cy="18"
+						r="16"
+					/>
+					<circle
+						class="text-accent-600"
+						stroke="currentColor"
+						stroke-width="4"
+						fill="none"
+						cx="18"
+						cy="18"
+						r="16"
+						:stroke-dasharray="100"
+						:stroke-dashoffset="100 - skill.percent"
+						stroke-linecap="round"
+					/>
+				</svg>
+				<span class="text-accent-400 absolute text-lg font-semibold">{{ skill.percent }}%</span>
+			</div>
+			<p class="px-4 text-base font-medium text-white">{{ skill.experience }} Years</p>
 		</div>
 	</motion.div>
 </template>
