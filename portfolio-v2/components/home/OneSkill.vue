@@ -1,23 +1,24 @@
 <template>
 	<motion.div
+		ref="card"
 		class="relative hover:cursor-pointer"
-		:animate="{ rotateY: rotate }"
-		:transition="{ type: 'spring', stiffness: 300, damping: 30 }"
-		style="transform-style: preserve-3d; perspective: 1000px"
+		:style="{ transform, transformStyle: 'preserve-3d' }"
 		@click="toggleFlip"
+		@mousemove="handleMouseMove"
+		@mouseleave="handleMouseLeave"
 	>
 		<!-- Front Side -->
 		<div
 			class="bg-primary-800/40 border-primary-700/40 flex flex-col items-center justify-center rounded-lg border p-6 backface-hidden"
-			style="backface-visibility: hidden; transform: rotateY(0deg)"
+			style="backface-visibility: hidden; transform-style: preserve-3d; transform: translateZ(25px)"
 		>
-			<img v-if="skill.img" :src="'img/skills/' + skill.img" alt="" class="mb-4 size-10" />
+			<img v-if="skill.img" :src="'img/skills/' + skill.img" alt="" class="mb-4 size-14" />
 			<h3 class="text-lg font-bold text-neutral-200">{{ skill.name }}</h3>
 		</div>
 		<!-- Back Side -->
 		<div
 			class="bg-primary-800/40 border-primary-800 absolute inset-0 flex flex-col items-center justify-center rounded-lg border p-6 backface-hidden"
-			style="backface-visibility: hidden; transform: rotateY(180deg)"
+			style="backface-visibility: hidden; transform: rotateY(180deg) translateZ(25px)"
 		>
 			<span>{{ skill.percent }}</span>
 			<p class="px-4 text-base">{{ skill.experience }} Years</p>
@@ -32,15 +33,47 @@ const { skill } = defineProps<{
 	skill: Skill
 }>()
 
-const rotate = ref(0)
-const isFlipped = ref(false)
+const ROTATION_RANGE = 32.5
+const HALF_ROTATION_RANGE = 32.5 / 2
 
-function flip(state: boolean) {
-	isFlipped.value = state
-	rotate.value = state ? 180 : 0
-}
+const isFlipped = ref(false)
 function toggleFlip() {
-	flip(!isFlipped.value)
+	if (isFlipped.value) {
+		ySpring.set(0)
+	} else {
+		ySpring.set(180)
+	}
+	isFlipped.value = !isFlipped.value
+}
+
+const x = useMotionValue(0)
+const y = useMotionValue(0)
+
+const xSpring = useSpring(x)
+const ySpring = useSpring(y)
+const transform = useMotionTemplate`rotateX(${xSpring}deg) rotateY(${ySpring}deg)`
+
+function handleMouseMove(e: MouseEvent) {
+	if (!e.target) return [0, 0]
+
+	const rect = (e.target as HTMLElement).getBoundingClientRect()
+
+	const width = rect.width
+	const height = rect.height
+
+	const mouseX = (e.clientX - rect.left) * ROTATION_RANGE
+	const mouseY = (e.clientY - rect.top) * ROTATION_RANGE
+
+	const rX = (mouseY / height - HALF_ROTATION_RANGE) * -1
+	const rY = mouseX / width - HALF_ROTATION_RANGE + (isFlipped.value ? 180 : 0)
+
+	x.set(rX)
+	y.set(rY)
+}
+
+function handleMouseLeave() {
+	x.set(0)
+	y.set(0 + (isFlipped.value ? 180 : 0))
 }
 </script>
 
