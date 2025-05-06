@@ -1,7 +1,7 @@
 <template>
 	<section class="py-24">
 		<UiSectionHeading>Skills</UiSectionHeading>
-		<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+		<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
 			<HomeOneSkill v-for="skill in currentSkills" :key="skill.key" :skill="skill" />
 		</div>
 	</section>

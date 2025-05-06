@@ -12,7 +12,7 @@
 			class="bg-primary-800/40 border-primary-700/40 flex flex-col items-center justify-center rounded-lg border p-6 backface-hidden"
 			style="backface-visibility: hidden; transform-style: preserve-3d; transform: translateZ(25px)"
 		>
-			<img v-if="skill.img" :src="'img/skills/' + skill.img" alt="" class="mb-4 size-14" />
+			<img v-if="skill.img" :src="'img/skills/' + skill.img" alt="" class="mb-4 size-16" />
 			<h3 class="text-lg font-bold text-neutral-200">{{ skill.name }}</h3>
 		</div>
 		<!-- Back Side -->
@@ -33,8 +33,8 @@ const { skill } = defineProps<{
 	skill: Skill
 }>()
 
-const ROTATION_RANGE = 32.5
-const HALF_ROTATION_RANGE = 32.5 / 2
+const ROTATION_RANGE = 40
+const HALF_ROTATION_RANGE = 40 / 2
 
 const isFlipped = ref(false)
 function toggleFlip() {
