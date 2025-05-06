@@ -26,7 +26,7 @@
 	pointer-events: none;
 	/* filter: blur(1px); */
 }
-.double-title::after {
+/* .double-title::after {
 	content: '';
 	position: absolute;
 	border-left: 2px solid var(--color-primary-600);
@@ -34,10 +34,8 @@
 	top: 6px;
 	margin-left: 0.5rem;
 	z-index: -10;
-	/* color: var(--color-neutral-600); */
 	font-size: 1em;
 	font-weight: 900;
 	pointer-events: none;
-	/* filter: blur(1px); */
-}
+} */
 </style>
