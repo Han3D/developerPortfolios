@@ -3,7 +3,7 @@
 
 	<UiForm @submit.prevent>
 		<UiFormfield label="Name" name="name">
-			<UiInput type="text" name="name" placeholder="Your Name" required />
+			<UiInput type="text" name="name" required />
 		</UiFormfield>
 		<UiButton type="submit" icon="lucide:send-horizontal" trailing>Send Message</UiButton>
 	</UiForm>
