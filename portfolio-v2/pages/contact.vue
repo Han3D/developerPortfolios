@@ -2,8 +2,14 @@
 	<UiSectionHeading>Contact me</UiSectionHeading>
 
 	<UiForm @submit.prevent>
-		<UiFormfield label="Name" name="name">
+		<UiFormfield>
 			<UiInput type="text" name="Name" required />
+		</UiFormfield>
+		<UiFormfield>
+			<UiInput type="text" name="Email" required />
+		</UiFormfield>
+		<UiFormfield>
+			<UiInput type="text" name="Phone Number" required />
 		</UiFormfield>
 		<UiButton type="submit" icon="lucide:send-horizontal" trailing>Send Message</UiButton>
 	</UiForm>
