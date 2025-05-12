@@ -11,25 +11,53 @@
 		</p>
 	</div>
 
-	<UiForm @submit.prevent>
+	<UiForm :state="state" :schema="schema" @submit.prevent>
 		<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-			<UiFormfield>
-				<UiInput type="text" name="Name" required />
+			<UiFormfield name="name">
+				<UiInput v-model="state.name" type="text" name="name" label="Name" required />
 			</UiFormfield>
-			<UiFormfield>
-				<UiInput type="email" name="Email" required />
+			<UiFormfield name="email">
+				<UiInput v-model="state.email" type="email" label="Email" required />
 			</UiFormfield>
 		</div>
-		<UiFormfield>
-			<UiTextarea name="Message" class="h-48" required />
+		<UiFormfield name="message">
+			<UiTextarea v-model="state.message" label="Message" class="h-48" required />
 		</UiFormfield>
+		<UiButton
+			icon="lucide:send-horizontal"
+			class="mt-10"
+			color="accent"
+			trailing
+			@click="sendContact"
+		>
+			Send Message
+		</UiButton>
 	</UiForm>
-	<UiButton type="submit" icon="lucide:send-horizontal" class="mt-10" color="accent" trailing>
-		Send Message
-	</UiButton>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { z } from 'zod'
+
+interface ContactForm {
+	name: string
+	email: string
+	message: string
+}
+
+const state = ref<ContactForm>({
+	name: '',
+	email: '',
+	message: '',
+})
+
+const schema = z.object({
+	name: z.string().min(5, 'Name is required'),
+	email: z.string().email('Invalid email address'),
+	message: z.string().min(1, 'Message is required'),
+})
+
+async function sendContact() {}
+</script>
 
 <style scoped>
 /* No custom styles needed, all handled by Tailwind */

@@ -96,6 +96,18 @@
 	--color-primary-800: #012f26;
 	--color-primary-900: #011914;
 	--color-primary-950: #000a08;
+
+	--color-red-50: #fecdcd;
+	--color-red-100: #feb4b4;
+	--color-red-200: #fd7d7d;
+	--color-red-300: #fc4b4b;
+	--color-red-400: #fb1414;
+	--color-red-500: #d60404;
+	--color-red-600: #af0303;
+	--color-red-700: #8c0303;
+	--color-red-800: #640202;
+	--color-red-900: #410101;
+	--color-red-950: #2d0101;
 }
 
 html {
