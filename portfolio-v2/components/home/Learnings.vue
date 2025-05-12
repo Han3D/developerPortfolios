@@ -69,7 +69,7 @@ const words = [
 	},
 	{
 		text: 'Kubernetes',
-		class: 'text-sky-600 text-2xl font-semibold drop-shadow',
+		class: 'text-sky-600 text-5xl font-semibold drop-shadow',
 		top: '30%',
 		left: '22%',
 		z: 2,
@@ -84,7 +84,7 @@ const words = [
 	},
 	{
 		text: 'LLMs',
-		class: 'text-fuchsia-500 text-4xl font-extrabold drop-shadow-lg',
+		class: 'text-fuchsia-500 text-7xl font-extrabold drop-shadow-lg',
 		top: '18%',
 		left: '55%',
 		z: 4,
@@ -159,7 +159,7 @@ const words = [
 	},
 	{
 		text: 'SwiftUI',
-		class: 'text-pink-400 text-3xl font-bold drop-shadow-lg',
+		class: 'text-pink-400 text-6xl font-bold drop-shadow-lg',
 		top: '35%',
 		left: '70%',
 		z: 4,
@@ -174,7 +174,7 @@ const words = [
 	},
 	{
 		text: 'Playwright',
-		class: 'text-lime-500 text-2xl font-semibold drop-shadow',
+		class: 'text-lime-500 text-3xl font-semibold drop-shadow',
 		top: '80%',
 		left: '75%',
 		z: 1,
@@ -189,7 +189,7 @@ const words = [
 	},
 	{
 		text: 'Github Actions',
-		class: 'text-gray-800 text-2xl font-bold drop-shadow',
+		class: 'text-gray-800 text-xl font-bold drop-shadow',
 		top: '55%',
 		left: '80%',
 		z: 5,
