@@ -72,10 +72,12 @@ async function onBlur(e: Event) {
 		isFocused.value = false
 		// Check if model.value is empty or undefined
 		y.set(100)
+		console.log('onBlur', model.value)
 
 		if (formContext) {
 			formContext.clearFieldError(fieldName)
 		}
+		return
 	}
 	if (formContext && fieldName) {
 		formContext.setTouched(fieldName, true)

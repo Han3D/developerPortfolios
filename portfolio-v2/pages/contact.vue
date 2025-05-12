@@ -3,12 +3,15 @@
 
 	<div class="mb-12 flex flex-col items-center gap-8 md:flex-row">
 		<img src="/img/eatramen.jpg" alt="my ramen eating avatar" class="h-32 w-32 rounded-full" />
-		<p>
-			Please send me a
-			<span class="text-accent-600">message</span>
-			and you will be granted access to my downloads (CV and more). If you already have access you
-			can contact me via my linked platforms, mail or also via this message box.
-		</p>
+		<div>
+			<h3 class="text-lg font-bold text-neutral-100">Lets get in touch!</h3>
+			<p>
+				Please send me a
+				<span class="text-accent-600">message</span>
+				and you will be granted access to my downloads (CV and more). If you already have access you
+				can contact me via my linked platforms, mail or also via this message box.
+			</p>
+		</div>
 	</div>
 
 	<UiForm :state="state" :schema="schema" @submit.prevent>

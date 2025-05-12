@@ -19,7 +19,7 @@
 				:id="fieldName"
 				v-model="model"
 				:name="fieldName"
-				:class="`w-full pl-3 focus:outline-none ${hasError && isTouched ? 'text-red-200' : 'text-primary-300'}`"
+				:class="`w-full resize-none pl-3 focus:outline-none ${hasError && isTouched ? 'text-red-200' : 'text-primary-300'}`"
 				v-bind="inputAttrs"
 				:aria-invalid="hasError && isTouched"
 				:aria-describedby="hasError && isTouched ? `error-${fieldName}` : undefined"
@@ -76,6 +76,7 @@ async function onBlur(e: Event) {
 		if (formContext) {
 			formContext.clearFieldError(fieldName)
 		}
+		return
 	}
 	if (formContext && fieldName) {
 		formContext.setTouched(fieldName, true)

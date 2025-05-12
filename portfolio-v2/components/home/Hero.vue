@@ -2,13 +2,13 @@
 	<section class="flex flex-col items-center py-12 text-center md:items-start md:text-start">
 		<span class="mb-2 font-semibold text-neutral-400">Hi I am</span>
 		<h1
-			class="hero__heading mb-2 text-5xl font-black tracking-tight text-white sm:text-7xl md:text-9xl"
+			class="hero__heading mb-2 text-6xl font-black tracking-tight text-white sm:text-7xl md:text-9xl"
 		>
 			Johannes Hueber
 		</h1>
-		<p class="mb-8 text-pretty text-neutral-400">
+		<span class="mb-8 text-sm text-pretty text-neutral-400 md:text-base">
 			Creative Full Stack Developer with a sprinkle of Dev Ops.
-		</p>
+		</span>
 		<div class="mb-10 flex flex-col items-center gap-4 md:flex-row">
 			<div class="flex items-center gap-4">
 				<UiButton to="/contact">Contact Me</UiButton>
