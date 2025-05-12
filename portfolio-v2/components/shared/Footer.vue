@@ -1,7 +1,9 @@
 <template>
-	<footer class="flex items-center justify-between space-x-8 py-6">
+	<footer
+		class="flex flex-col items-center justify-between space-y-6 py-6 sm:flex-row sm:space-y-0 md:space-x-8"
+	>
 		<span class="text-accent-700 text-sm font-medium">Han3D @ 2025 All Rights Reserved</span>
-		<span class="border-primary-800 hidden h-1 grow border-b md:inline-block"></span>
+		<span class="border-primary-800 hidden h-1 grow border-b sm:inline-block"></span>
 		<div class="flex space-x-4">
 			<a
 				href="https://github.com/Han3D"
