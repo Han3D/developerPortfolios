@@ -6,3 +6,9 @@ interface Skill {
 	description: string
 	experience: string
 }
+
+interface ContactForm {
+	name: string
+	email: string
+	message: string
+}

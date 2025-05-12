@@ -12,6 +12,7 @@ export default defineNuxtConfig({
 		'@nuxtjs/supabase',
 		'@nuxt/icon',
 		'@nuxtjs/seo',
+		'nuxt-nodemailer',
 	],
 
 	fonts: {
@@ -29,6 +30,23 @@ export default defineNuxtConfig({
 			include: ['/downloads', '/admin'],
 			exclude: ['/', '/contact'],
 			saveRedirectToCookie: false,
+		},
+	},
+
+	nodemailer: {
+		from: 'Han3D Portfolio',
+		host: 'sandbox.smtp.mailtrap.io',
+		port: 2525,
+		// secure: true,
+		auth: {
+			user: '****abc',
+			pass: '****abc',
+		},
+	},
+
+	runtimeConfig: {
+		nodemailer: {
+			to: '',
 		},
 	},
 

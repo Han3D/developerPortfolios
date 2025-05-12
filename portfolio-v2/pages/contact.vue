@@ -14,7 +14,7 @@
 		</div>
 	</div>
 
-	<UiForm :state="state" :schema="schema" @submit.prevent>
+	<UiForm :state="state" :schema="schema" @submit="sendContact">
 		<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
 			<UiFormfield name="name">
 				<UiInput v-model="state.name" type="text" name="name" label="Name" required />
@@ -26,13 +26,7 @@
 		<UiFormfield name="message">
 			<UiTextarea v-model="state.message" label="Message" class="h-48" required />
 		</UiFormfield>
-		<UiButton
-			icon="lucide:send-horizontal"
-			class="mt-10"
-			color="accent"
-			trailing
-			@click="sendContact"
-		>
+		<UiButton icon="lucide:send-horizontal" class="mt-10" color="accent" trailing type="submit">
 			Send Message
 		</UiButton>
 	</UiForm>
@@ -40,12 +34,6 @@
 
 <script setup lang="ts">
 import { z } from 'zod'
-
-interface ContactForm {
-	name: string
-	email: string
-	message: string
-}
 
 const state = ref<ContactForm>({
 	name: '',
@@ -59,7 +47,22 @@ const schema = z.object({
 	message: z.string().min(1, 'Message is required'),
 })
 
-async function sendContact() {}
+async function sendContact() {
+	try {
+		console.log('Sending contact email...')
+		const response = await $fetch('/api/mail', {
+			method: 'POST',
+			body: {
+				name: state.value.name,
+				email: state.value.email,
+				message: state.value.message,
+			},
+		})
+		console.log('➤ ~ sendContact ~ response:', response)
+	} catch (error) {
+		console.error('Error sending email:', error)
+	}
+}
 </script>
 
 <style scoped>
