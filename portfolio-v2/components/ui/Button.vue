@@ -29,7 +29,7 @@ const {
 
 // CSS Classes
 const baseClasses =
-	'flex items-center gap-2 border rounded-lg py-2 px-4 font-medium text-sm text-white transition whitespace-nowrap'
+	'flex items-center gap-2 border rounded-lg py-2 px-4 font-medium text-sm text-white transition whitespace-nowrap hover:cursor-pointer hover:-translate-y-0.5 transition-all duration-200 ease-in-out'
 
 const blockClasses = block ? 'w-full' : 'w-fit'
 

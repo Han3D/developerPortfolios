@@ -13,8 +13,8 @@
 			>
 				{{ name }}
 			</motion.legend>
-			<input
-				class="text-primary-300 h-10 w-full pl-3 focus:outline-none"
+			<textarea
+				class="text-primary-300 h-10 w-full resize-none rounded-lg pl-3 focus:outline-none"
 				:value="model"
 				:name
 				v-bind="inputAttrs"
@@ -44,16 +44,6 @@ const attrs = useAttrs()
 const y = useSpring(100, { stiffness: 300, damping: 10, mass: 0.5 })
 const transform = useMotionTemplate`translateY(${y}%)`
 
-// Separate listeners (starting with "on") from other attrs
-// const listeners = computed(() =>
-// 	Object.fromEntries(
-// 		Object.entries(attrs).filter(([key, val]) => key.startsWith('on') && typeof val === 'function')
-// 	)
-// )
-const inputAttrs = computed(() =>
-	Object.fromEntries(Object.entries(attrs).filter(([key, val]) => !key.startsWith('on')))
-)
-
 function onFocus(e: Event) {
 	isFocused.value = true
 	y.set(0)
@@ -63,8 +53,10 @@ function onBlur(e: Event) {
 	isFocused.value = false
 	y.set(100)
 }
+
+const inputAttrs = computed(() =>
+	Object.fromEntries(Object.entries(attrs).filter(([key, val]) => !key.startsWith('on')))
+)
 </script>
 
-<style scoped>
-/* Add custom styles if needed */
-</style>
+<style scoped></style>
