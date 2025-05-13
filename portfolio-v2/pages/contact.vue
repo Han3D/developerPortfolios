@@ -1,7 +1,7 @@
 <template>
 	<UiSectionHeading>Contact me</UiSectionHeading>
 
-	<div class="mb-12 flex flex-col items-center gap-8 md:flex-row">
+	<div class="mb-24 flex flex-col items-center gap-8 md:flex-row">
 		<img src="/img/eatramen.jpg" alt="my ramen eating avatar" class="h-32 w-32 rounded-full" />
 		<div>
 			<h3 class="text-lg font-bold text-neutral-100">Lets get in touch!</h3>
@@ -14,7 +14,15 @@
 		</div>
 	</div>
 
-	<UiForm :state="state" :schema="schema" @submit="sendContact">
+	<UiAlert v-if="sendError" type="error" class="mb-8" close @close="sendError = false">
+		<span>There was an error sending your message. Please try again later.</span>
+		<span>If the problem persists, please contact me via my linked platforms.</span>
+	</UiAlert>
+	<UiAlert v-else-if="sendSuccess" type="success" class="mb-8" close @close="sendSuccess = false">
+		<span>Your message has been sent successfully!</span>
+		<span>Thank you for reaching out!</span>
+	</UiAlert>
+	<UiForm v-else :state="state" :schema="schema" @submit="sendContact">
 		<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
 			<UiFormfield name="name">
 				<UiInput v-model="state.name" type="text" name="name" label="Name" required />
@@ -47,21 +55,25 @@ const schema = z.object({
 	message: z.string().min(1, 'Message is required'),
 })
 
+const sendSuccess = ref(false)
+const sendError = ref(false)
+
 async function sendContact() {
-	try {
-		console.log('Sending contact email...')
-		const response = await $fetch('/api/mail', {
-			method: 'POST',
-			body: {
-				name: state.value.name,
-				email: state.value.email,
-				message: state.value.message,
-			},
-		})
-		console.log('➤ ~ sendContact ~ response:', response)
-	} catch (error) {
-		console.error('Error sending email:', error)
-	}
+	// try {
+	// 	console.log('Sending contact email...')
+	// 	const response = await $fetch('/api/mail', {
+	// 		method: 'POST',
+	// 		body: {
+	// 			name: state.value.name,
+	// 			email: state.value.email,
+	// 			message: state.value.message,
+	// 		},
+	// 	})
+	// 	console.log('➤ ~ sendContact ~ response:', response)
+	// } catch (error) {
+	// 	console.error('Error sending email:', error)
+	// }
+	sendSuccess.value = true
 }
 </script>
 

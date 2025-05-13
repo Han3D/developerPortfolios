@@ -1,5 +1,7 @@
 <template>
-	<h2 class="double-title relative mb-8 text-3xl font-black text-neutral-200 uppercase md:text-5xl">
+	<h2
+		class="double-title relative mb-10 text-3xl font-black text-neutral-200 uppercase md:text-5xl"
+	>
 		<slot />
 	</h2>
 </template>

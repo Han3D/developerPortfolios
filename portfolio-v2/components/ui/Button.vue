@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
 import { twMerge } from 'tailwind-merge'
-type Color = 'primary' | 'accent' | 'neutral'
+type Color = 'primary' | 'accent' | 'neutral' | 'transparent'
 
 const {
 	to,
@@ -39,6 +39,7 @@ const colorClasses = {
 	primary: 'bg-primary-700/75 border-primary-600 hover:bg-primary-600',
 	accent: 'bg-accent-700/75 border-accent-600 hover:bg-accent-600',
 	neutral: 'bg-neutral-700/75 border-neutral-600 hover:bg-neutral-600',
+	transparent: 'bg-transparent border-transparent text-neutral-100 hover:bg-neutral-700/50',
 }
 
 // Merge classes using twMerge
