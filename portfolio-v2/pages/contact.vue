@@ -22,25 +22,39 @@
 		<span>Your message has been sent successfully!</span>
 		<span>Thank you for reaching out!</span>
 	</UiAlert>
-	<UiForm v-else :state="state" :schema="schema" @submit="sendContact">
-		<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-			<UiFormfield name="name">
-				<UiInput v-model="state.name" type="text" name="name" label="Name" required />
+	<motion.div
+		v-else
+		:initial="{ opacity: 0, y: -20 }"
+		:animate="{ opacity: 1, y: 0, transition: { duration: 0.4, delay: 0.1 } }"
+	>
+		<UiForm ref="form" :state="state" :schema="schema" @submit="sendContact">
+			<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+				<UiFormfield name="name">
+					<UiInput v-model="state.name" type="text" name="name" label="Name" required />
+				</UiFormfield>
+				<UiFormfield name="email">
+					<UiInput v-model="state.email" type="email" label="Email" required />
+				</UiFormfield>
+			</div>
+			<UiFormfield name="message">
+				<UiTextarea v-model="state.message" label="Message" class="h-48" required />
 			</UiFormfield>
-			<UiFormfield name="email">
-				<UiInput v-model="state.email" type="email" label="Email" required />
-			</UiFormfield>
-		</div>
-		<UiFormfield name="message">
-			<UiTextarea v-model="state.message" label="Message" class="h-48" required />
-		</UiFormfield>
-		<UiButton icon="lucide:send-horizontal" class="mt-10" color="accent" trailing type="submit">
-			Send Message
-		</UiButton>
-	</UiForm>
+			<UiButton
+				icon="lucide:send-horizontal"
+				class="mt-10"
+				color="accent"
+				trailing
+				type="submit"
+				:loading="loading"
+			>
+				Send Message
+			</UiButton>
+		</UiForm>
+	</motion.div>
 </template>
 
 <script setup lang="ts">
+import { motion } from 'motion-v'
 import { z } from 'zod'
 
 const state = ref<ContactForm>({
@@ -57,23 +71,44 @@ const schema = z.object({
 
 const sendSuccess = ref(false)
 const sendError = ref(false)
+const loading = ref(false)
+const form = useTemplateRef('form')
 
 async function sendContact() {
-	// try {
-	// 	console.log('Sending contact email...')
-	// 	const response = await $fetch('/api/mail', {
-	// 		method: 'POST',
-	// 		body: {
-	// 			name: state.value.name,
-	// 			email: state.value.email,
-	// 			message: state.value.message,
-	// 		},
-	// 	})
-	// 	console.log('➤ ~ sendContact ~ response:', response)
-	// } catch (error) {
-	// 	console.error('Error sending email:', error)
-	// }
-	sendSuccess.value = true
+	try {
+		loading.value = true
+		if (!form.value) {
+			console.error('Form reference is not defined')
+			sendError.value = true
+			loading.value = false
+			return
+		}
+
+		console.log('Sending contact email...')
+		const response = await $fetch('/api/mail', {
+			method: 'POST',
+			body: {
+				name: state.value.name,
+				email: state.value.email,
+				message: state.value.message,
+			},
+		})
+		form.value.resetForm()
+
+		// Reset the form
+		state.value = {
+			name: '',
+			email: '',
+			message: '',
+		}
+		sendSuccess.value = true
+	} catch (error) {
+		// Handle the error
+		console.error('Error sending email:', error)
+		sendError.value = true
+	} finally {
+		loading.value = false
+	}
 }
 </script>
 

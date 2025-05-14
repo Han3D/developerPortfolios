@@ -1,16 +1,21 @@
 <template>
-	<div :class="alertClasses">
+	<motion.div
+		:class="alertClasses"
+		:initial="{ opacity: 0, y: -20 }"
+		:animate="{ opacity: 1, y: 0, transition: { duration: 0.4, delay: 0.1 } }"
+	>
 		<Icon :name="icon[type]" class="h-8 min-w-8" />
-		<div>
+		<div class="flex flex-col">
 			<slot />
 		</div>
 		<button v-if="close" :class="closeClasses" @click="emit('close')">
 			<Icon name="lucide:x" class="h-5 w-5" />
 		</button>
-	</div>
+	</motion.div>
 </template>
 
 <script setup lang="ts">
+import { motion } from 'motion-v'
 import { twMerge } from 'tailwind-merge'
 
 type AlertType = 'success' | 'error' | 'warning' | 'info'

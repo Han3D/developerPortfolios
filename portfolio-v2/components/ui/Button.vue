@@ -4,8 +4,13 @@
 		<slot />
 	</a>
 	<button v-else :class="buttonClasses">
-		<Icon v-if="icon" :name="icon" />
-		<slot />
+		<span class="absolute inset-0 flex items-center justify-center">
+			<Icon v-if="loading" name="lucide:loader" class="animate-spin" />
+		</span>
+		<Icon v-if="icon" :name="icon" :class="{ 'opacity-0': loading }" />
+		<span :class="{ 'opacity-0': loading }">
+			<slot />
+		</span>
 	</button>
 </template>
 
@@ -19,17 +24,19 @@ const {
 	icon,
 	trailing = false,
 	block = false,
+	loading = false,
 } = defineProps<{
 	to?: string
 	color?: Color
 	icon?: string
 	trailing?: boolean
 	block?: boolean
+	loading?: boolean
 }>()
 
 // CSS Classes
 const baseClasses =
-	'flex items-center gap-2 border rounded-lg py-2 px-4 font-medium text-sm text-white transition whitespace-nowrap hover:cursor-pointer hover:-translate-y-0.5 transition-all duration-200 ease-in-out'
+	'relative flex items-center gap-2 border rounded-lg py-2 px-4 font-medium text-sm text-white transition whitespace-nowrap hover:cursor-pointer hover:-translate-y-0.5 transition-all duration-200 ease-in-out'
 
 const blockClasses = block ? 'w-full' : 'w-fit'
 

@@ -67,6 +67,13 @@ function onFocus(e: Event) {
 	y.set(0)
 }
 
+// Watch the model value and update the label position
+watch(model, (newValue) => {
+	if (newValue) {
+		y.set(0)
+	}
+})
+
 async function onBlur(e: Event) {
 	if (!model.value && !hasError.value && !isTouched.value) {
 		isFocused.value = false
