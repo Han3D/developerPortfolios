@@ -17,7 +17,7 @@
 			<UiFormfield name="password">
 				<UiInput v-model="state.password" type="password" label="Password" />
 			</UiFormfield>
-			<UiButton trailing type="submit" class="mt-10" :loading="loading">Log In</UiButton>
+			<UiButton trailing type="submit" class="mt-10" block :loading="loading">Log In</UiButton>
 		</UiForm>
 	</motion.div>
 </template>

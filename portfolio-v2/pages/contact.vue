@@ -85,7 +85,7 @@ async function sendContact() {
 		}
 
 		console.log('Sending contact email...')
-		const response = await $fetch('/api/mail', {
+		await $fetch('/api/mail', {
 			method: 'POST',
 			body: {
 				name: state.value.name,

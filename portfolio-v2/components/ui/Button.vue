@@ -38,7 +38,7 @@ const {
 const baseClasses =
 	'relative flex items-center gap-2 border rounded-lg py-2 px-4 font-medium text-sm text-white transition whitespace-nowrap hover:cursor-pointer hover:-translate-y-0.5 transition-all duration-200 ease-in-out'
 
-const blockClasses = block ? 'w-full' : 'w-fit'
+const blockClasses = block ? 'w-full justify-center' : 'w-fit'
 
 const trailingClasses = trailing ? 'flex-row-reverse' : 'flex-row'
 
