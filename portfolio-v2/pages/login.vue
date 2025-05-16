@@ -23,7 +23,7 @@
 </template>
 
 <script setup lang="ts">
-import { signInWithEmailAndPassword } from 'firebase/auth'
+// import { signInWithEmailAndPassword } from 'firebase/auth'
 import { motion } from 'motion-v'
 import { z } from 'zod'
 
@@ -51,8 +51,8 @@ const loading = ref(false)
 const form = useTemplateRef('form')
 const loginError = ref(false)
 
-const auth = useFirebaseAuth()!
-console.log('➤ ~ auth:', auth)
+// const auth = useFirebaseAuth()!
+// console.log('➤ ~ auth:', auth)
 
 async function login() {
 	try {
@@ -63,11 +63,11 @@ async function login() {
 			return
 		}
 
-		if (!auth) {
-			console.error('Firebase auth is not initialized')
-			loading.value = false
-			return
-		}
+		// if (!auth) {
+		// 	console.error('Firebase auth is not initialized')
+		// 	loading.value = false
+		// 	return
+		// }
 
 		console.log('Logging in...')
 		// const { error, data } = await supabase.auth.signInWithPassword({
@@ -80,8 +80,8 @@ async function login() {
 		// 	console.error('Login error:', error.message)
 		// 	return
 		// }
-		const response = await signInWithEmailAndPassword(auth, state.value.email, state.value.password)
-		console.log('➤ ~ login ~ response:', response)
+		// const response = await signInWithEmailAndPassword(auth, state.value.email, state.value.password)
+		// console.log('➤ ~ login ~ response:', response)
 
 		await navigateTo('/downloads')
 	} catch (error) {
