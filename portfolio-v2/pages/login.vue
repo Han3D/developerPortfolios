@@ -23,16 +23,20 @@
 </template>
 
 <script setup lang="ts">
+import { signInWithEmailAndPassword } from 'firebase/auth'
 import { motion } from 'motion-v'
-
 import { z } from 'zod'
+
+definePageMeta({
+	middleware: ['auth'],
+})
+
+console.log('Attempting to load credentials from:', process.env.GOOGLE_APPLICATION_CREDENTIALS)
 
 interface LoginForm {
 	email: string
 	password: string
 }
-
-const supabase = useSupabaseClient()
 
 const state = ref<LoginForm>({
 	email: '',
@@ -47,6 +51,9 @@ const loading = ref(false)
 const form = useTemplateRef('form')
 const loginError = ref(false)
 
+const auth = useFirebaseAuth()!
+console.log('➤ ~ auth:', auth)
+
 async function login() {
 	try {
 		loading.value = true
@@ -56,17 +63,25 @@ async function login() {
 			return
 		}
 
-		console.log('Logging in...')
-		const { error, data } = await supabase.auth.signInWithPassword({
-			email: state.value.email,
-			password: state.value.password,
-		})
-
-		if (error) {
-			loginError.value = true
-			console.error('Login error:', error.message)
+		if (!auth) {
+			console.error('Firebase auth is not initialized')
+			loading.value = false
 			return
 		}
+
+		console.log('Logging in...')
+		// const { error, data } = await supabase.auth.signInWithPassword({
+		// 	email: state.value.email,
+		// 	password: state.value.password,
+		// })
+
+		// if (error) {
+		// 	loginError.value = true
+		// 	console.error('Login error:', error.message)
+		// 	return
+		// }
+		const response = await signInWithEmailAndPassword(auth, state.value.email, state.value.password)
+		console.log('➤ ~ login ~ response:', response)
 
 		await navigateTo('/downloads')
 	} catch (error) {

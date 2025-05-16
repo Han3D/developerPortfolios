@@ -9,10 +9,10 @@ export default defineNuxtConfig({
 		'@nuxt/fonts',
 		'@nuxt/scripts',
 		'motion-v/nuxt',
-		'@nuxtjs/supabase',
 		'@nuxt/icon',
 		'@nuxtjs/seo',
 		'nuxt-nodemailer',
+		'nuxt-vuefire',
 	],
 
 	fonts: {
@@ -23,13 +23,40 @@ export default defineNuxtConfig({
 		plugins: [tailwindcss()],
 	},
 
-	supabase: {
-		redirectOptions: {
-			login: '/login',
-			callback: '/confirm',
-			include: ['/downloads', '/admin'],
-			exclude: ['/', '/contact'],
-			saveRedirectToCookie: false,
+	nitro: {
+		prerender: {
+			// these routes are not dependent on any data and can be prerendered
+			// it's a good idea to pre render all routes that you can
+			routes: ['/', '/contact'],
+		},
+		preset: 'firebase',
+
+		// for the upcoming preset
+		firebase: {
+			gen: 2,
+		},
+	},
+
+	vuefire: {
+		emulators: {
+			// uncomment this line to run the application in production mode without emulators during dev
+			// enabled: false,
+			auth: {
+				options: {
+					disableWarnings: true,
+				},
+			},
+		},
+		auth: {
+			enabled: true,
+			popupRedirectResolver: false,
+		},
+		config: {
+			apiKey: '...',
+			authDomain: '...',
+			projectId: '...',
+			appId: '...',
+			// there could be other properties depending on the project
 		},
 	},
 
