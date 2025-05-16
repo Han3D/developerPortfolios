@@ -23,19 +23,35 @@ export default defineNuxtConfig({
 		plugins: [tailwindcss()],
 	},
 
-	nitro: {
-		prerender: {
-			// these routes are not dependent on any data and can be prerendered
-			// it's a good idea to pre render all routes that you can
-			routes: ['/', '/contact'],
-		},
-		preset: 'firebase',
-
-		// for the upcoming preset
-		firebase: {
-			gen: 2,
+	app: {
+		head: {
+			title: 'Han3D Portfolio',
+			link: [
+				{
+					rel: 'icon',
+					type: 'image/x-icon',
+					href: '/favicon.ico',
+				},
+			],
 		},
 	},
+
+	// nitro: {
+	// 	prerender: {
+	// 		// these routes are not dependent on any data and can be prerendered
+	// 		// it's a good idea to pre render all routes that you can
+	// 		routes: ['/', '/contact'],
+	// 	},
+	// 	preset: 'firebase',
+
+	// 	// for the upcoming preset
+	// 	firebase: {
+	// 		gen: 2,
+	// 		httpsOptions: {
+	// 			region: 'europe-west1',
+	// 		},
+	// 	},
+	// },
 
 	vuefire: {
 		emulators: {

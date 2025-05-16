@@ -11,17 +11,12 @@
       {
         "source": "**",
         "function": "server"
-      },
-      {
-        "source": "**",
-        "destination": "/index.html"
       }
     ]
   },
   "functions": [
     {
       "source": ".output/server",
-      "codebase": "default",
       "ignore": [
         ".git",
         "firebase-debug.log",
