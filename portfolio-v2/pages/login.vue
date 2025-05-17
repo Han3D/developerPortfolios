@@ -6,6 +6,14 @@
 		<span>If the problem persists, please contact me via my linked platforms.</span>
 	</UiAlert>
 
+	<UiAlert type="info" class="mb-8">
+		<span>
+			This site is currently with no functionality and only forwards you to the downloads page, that
+			also currently has no functionality until i was able to decide on an authentication provider
+			or implement it myself. Please have some patience. Thanks!
+		</span>
+	</UiAlert>
+
 	<motion.div
 		:initial="{ opacity: 0, y: -20 }"
 		:animate="{ opacity: 1, y: 0, transition: { duration: 0.4, delay: 0.1 } }"
@@ -51,9 +59,6 @@ const loading = ref(false)
 const form = useTemplateRef('form')
 const loginError = ref(false)
 
-// const auth = useFirebaseAuth()!
-// console.log('➤ ~ auth:', auth)
-
 async function login() {
 	try {
 		loading.value = true
@@ -63,25 +68,7 @@ async function login() {
 			return
 		}
 
-		// if (!auth) {
-		// 	console.error('Firebase auth is not initialized')
-		// 	loading.value = false
-		// 	return
-		// }
-
 		console.log('Logging in...')
-		// const { error, data } = await supabase.auth.signInWithPassword({
-		// 	email: state.value.email,
-		// 	password: state.value.password,
-		// })
-
-		// if (error) {
-		// 	loginError.value = true
-		// 	console.error('Login error:', error.message)
-		// 	return
-		// }
-		// const response = await signInWithEmailAndPassword(auth, state.value.email, state.value.password)
-		// console.log('➤ ~ login ~ response:', response)
 
 		await navigateTo('/downloads')
 	} catch (error) {
