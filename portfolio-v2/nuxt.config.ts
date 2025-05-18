@@ -50,6 +50,14 @@ export default defineNuxtConfig({
 		nodemailer: {
 			to: '',
 		},
+		recaptcha: {
+			secretKey: '',
+		},
+		public: {
+			recaptcha: {
+				siteKey: '',
+			},
+		},
 	},
 
 	compatibilityDate: '2024-11-01',

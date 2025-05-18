@@ -55,7 +55,27 @@
 
 <script setup lang="ts">
 import { motion } from 'motion-v'
+import type { IReCaptchaComposition } from 'vue-recaptcha-v3'
+import { useReCaptcha } from 'vue-recaptcha-v3'
 import { z } from 'zod'
+
+const recaptcha: Ref<IReCaptchaComposition | undefined> = ref(undefined)
+
+onMounted(() => {
+	recaptcha.value = useReCaptcha()
+})
+
+async function getRecaptcha() {
+	// Check if reCAPTCHA is available
+	if (!recaptcha.value) {
+		console.error('reCAPTCHA is not available')
+		return undefined
+	}
+	const { executeRecaptcha, recaptchaLoaded } = recaptcha.value
+
+	await recaptchaLoaded() // Wait for reCAPTCHA to load
+	return await executeRecaptcha('contact') // Create a reCAPTCHA token
+}
 
 const state = ref<ContactForm>({
 	name: '',
@@ -84,13 +104,20 @@ async function sendContact() {
 			return
 		}
 
+		const token = await getRecaptcha()
+		if (!token) {
+			console.error('Failed to get reCAPTCHA token')
+			sendError.value = true
+			loading.value = false
+			return
+		}
+
 		console.log('Sending contact email...')
 		await $fetch('/api/mail', {
 			method: 'POST',
 			body: {
-				name: state.value.name,
-				email: state.value.email,
-				message: state.value.message,
+				token, // Include the reCAPTCHA token
+				contactForm: state.value,
 			},
 		})
 		form.value.resetForm()
