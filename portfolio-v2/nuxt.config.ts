@@ -24,7 +24,7 @@ export default defineNuxtConfig({
 
 	app: {
 		head: {
-			title: 'Han3D Portfolio',
+			titleTemplate: '%s - %siteName',
 			link: [
 				{
 					rel: 'icon',
@@ -33,6 +33,10 @@ export default defineNuxtConfig({
 				},
 			],
 		},
+	},
+
+	site: {
+		name: 'Johannes Hueber',
 	},
 
 	nodemailer: {

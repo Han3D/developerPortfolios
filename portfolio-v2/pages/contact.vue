@@ -1,56 +1,56 @@
 <template>
-	<UiSectionHeading>Contact me</UiSectionHeading>
-
-	<div class="mb-24 flex flex-col items-center gap-8 md:flex-row">
-		<img src="/img/eatramen.jpg" alt="my ramen eating avatar" class="h-32 w-32 rounded-full" />
-		<div>
-			<h3 class="text-lg font-bold text-neutral-100">Lets get in touch!</h3>
-			<p>
-				Please send me a
-				<span class="text-accent-600">message</span>
-				and you will be granted access to my downloads (CV and more). If you already have access you
-				can contact me via my linked platforms, mail or also via this message box.
-			</p>
-		</div>
-	</div>
-
-	<UiAlert v-if="sendError" type="error" class="mb-8" close @close="sendError = false">
-		<span>There was an error sending your message. Please try again later.</span>
-		<span>If the problem persists, please contact me via my linked platforms.</span>
-	</UiAlert>
-	<UiAlert v-else-if="sendSuccess" type="success" class="mb-8" close @close="sendSuccess = false">
-		<span>Your message has been sent successfully!</span>
-		<span>Thank you for reaching out!</span>
-	</UiAlert>
-	<motion.div
-		v-else
-		:initial="{ opacity: 0, y: -20 }"
-		:animate="{ opacity: 1, y: 0, transition: { duration: 0.4, delay: 0.1 } }"
-	>
-		<UiForm ref="form" :state="state" :schema="schema" @submit="sendContact">
-			<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-				<UiFormfield name="name">
-					<UiInput v-model="state.name" type="text" name="name" label="Name" required />
-				</UiFormfield>
-				<UiFormfield name="email">
-					<UiInput v-model="state.email" type="email" label="Email" required />
-				</UiFormfield>
+	<div class="py-12">
+		<UiSectionHeading>Contact me</UiSectionHeading>
+		<div class="mb-24 flex flex-col items-center gap-8 md:flex-row">
+			<img src="/img/eatramen.jpg" alt="my ramen eating avatar" class="h-32 w-32 rounded-full" />
+			<div>
+				<h3 class="text-lg font-bold text-neutral-100">Lets get in touch!</h3>
+				<p>
+					Please send me a
+					<span class="text-accent-600">message</span>
+					and you will be granted access to my downloads (CV and more). If you already have access
+					you can contact me via my linked platforms, mail or also via this message box.
+				</p>
 			</div>
-			<UiFormfield name="message">
-				<UiTextarea v-model="state.message" label="Message" class="h-48" required />
-			</UiFormfield>
-			<UiButton
-				icon="lucide:send-horizontal"
-				class="mt-10"
-				color="accent"
-				trailing
-				type="submit"
-				:loading="loading"
-			>
-				Send Message
-			</UiButton>
-		</UiForm>
-	</motion.div>
+		</div>
+		<UiAlert v-if="sendError" type="error" class="mb-8" close @close="sendError = false">
+			<span>There was an error sending your message. Please try again later.</span>
+			<span>If the problem persists, please contact me via my linked platforms.</span>
+		</UiAlert>
+		<UiAlert v-else-if="sendSuccess" type="success" class="mb-8" close @close="sendSuccess = false">
+			<span>Your message has been sent successfully!</span>
+			<span>Thank you for reaching out!</span>
+		</UiAlert>
+		<motion.div
+			v-else
+			:initial="{ opacity: 0, y: -20 }"
+			:animate="{ opacity: 1, y: 0, transition: { duration: 0.4, delay: 0.1 } }"
+		>
+			<UiForm ref="form" :state="state" :schema="schema" @submit="sendContact">
+				<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+					<UiFormfield name="name">
+						<UiInput v-model="state.name" type="text" name="name" label="Name" required />
+					</UiFormfield>
+					<UiFormfield name="email">
+						<UiInput v-model="state.email" type="email" label="Email" required />
+					</UiFormfield>
+				</div>
+				<UiFormfield name="message">
+					<UiTextarea v-model="state.message" label="Message" class="h-48" required />
+				</UiFormfield>
+				<UiButton
+					icon="lucide:send-horizontal"
+					class="mt-10"
+					color="accent"
+					trailing
+					type="submit"
+					:loading="loading"
+				>
+					Send Message
+				</UiButton>
+			</UiForm>
+		</motion.div>
+	</div>
 </template>
 
 <script setup lang="ts">
@@ -58,6 +58,14 @@ import { motion } from 'motion-v'
 import type { IReCaptchaComposition } from 'vue-recaptcha-v3'
 import { useReCaptcha } from 'vue-recaptcha-v3'
 import { z } from 'zod'
+
+useHead({
+	title: 'Contact',
+})
+
+useSeoMeta({
+	description: 'Get in touch with me via this contact form. I will respond as soon as possible.',
+})
 
 const recaptcha: Ref<IReCaptchaComposition | undefined> = ref(undefined)
 

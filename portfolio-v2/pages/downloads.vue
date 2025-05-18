@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="py-12">
 		<UiSectionHeading>Downloads</UiSectionHeading>
 		<UiAlert type="info" class="mb-8">
 			<span>
@@ -17,6 +17,10 @@
 <script setup lang="ts">
 definePageMeta({
 	middleware: ['auth'],
+})
+
+useHead({
+	title: 'Downloads',
 })
 </script>
 
