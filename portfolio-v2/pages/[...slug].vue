@@ -1,7 +1,7 @@
 <template>
 	<section class="grid grid-cols-1 gap-4 py-12 md:grid-cols-2">
 		<div class="flex flex-col">
-			<UiSectionHeading class="mb-6">
+			<UiSectionHeading>
 				<span class="flex items-center gap-2">Not Found</span>
 			</UiSectionHeading>
 			<span class="mb-8 text-lg text-neutral-300">
