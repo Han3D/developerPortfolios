@@ -1,9 +1,9 @@
 <template>
 	<HomeHero />
 	<HomeAboutMe />
-	<HomeProjects />
-	<HomeSkills />
-	<HomeLearnings />
+	<LazyHomeProjects />
+	<LazyHomeSkills />
+	<LazyHomeLearnings />
 </template>
 
 <script setup lang="ts">

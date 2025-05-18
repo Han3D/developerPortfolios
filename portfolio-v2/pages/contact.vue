@@ -24,7 +24,7 @@
 		<motion.div
 			v-else
 			:initial="{ opacity: 0, y: -20 }"
-			:animate="{ opacity: 1, y: 0, transition: { duration: 0.4, delay: 0.1 } }"
+			:animate="{ opacity: 1, y: 0, transition: { duration: 0.3, delay: 0.1 } }"
 		>
 			<UiForm ref="form" :state="state" :schema="schema" @submit="sendContact">
 				<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
