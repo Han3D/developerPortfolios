@@ -64,5 +64,9 @@ export default defineNuxtConfig({
 		},
 	},
 
+	experimental: {
+		inlineRouteRules: true,
+	},
+
 	compatibilityDate: '2024-11-01',
 })

@@ -67,6 +67,10 @@ useSeoMeta({
 	description: 'Get in touch with me via this contact form. I will respond as soon as possible.',
 })
 
+defineRouteRules({
+	prerender: true,
+})
+
 const recaptcha: Ref<IReCaptchaComposition | undefined> = ref(undefined)
 
 onMounted(() => {

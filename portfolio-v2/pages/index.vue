@@ -10,6 +10,10 @@
 useHead({
 	title: 'Startseite',
 })
+
+defineRouteRules({
+	prerender: true,
+})
 </script>
 
 <style scoped></style>
