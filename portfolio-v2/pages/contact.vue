@@ -60,15 +60,31 @@ import { useReCaptcha } from 'vue-recaptcha-v3'
 import { z } from 'zod'
 
 useHead({
-	title: 'Contact',
+	title: 'Contact Johannes Hueber - Get in Touch',
 })
 
 useSeoMeta({
-	description: 'Get in touch with me via this contact form. I will respond as soon as possible.',
+	title: 'Contact Johannes Hueber - Get in Touch',
+	description:
+		'Contact Johannes Hueber (Han3D) for project inquiries, collaboration opportunities, or professional discussions. Get your message directly to me through this secure contact form.',
+	ogTitle: 'Contact Johannes Hueber - Get in Touch',
+	ogDescription:
+		'Contact Johannes Hueber (Han3D) for project inquiries, collaboration opportunities, or professional discussions.',
+	keywords: 'contact Johannes Hueber, Han3D contact, fullstack engineer contact, project inquiry',
 })
+
+// Structured data for contact page
+useSchemaOrg([
+	defineWebPage({
+		'@type': 'ContactPage',
+		name: 'Contact Johannes Hueber',
+		description: 'Contact page for Johannes Hueber - Fullstack Engineer',
+	}),
+])
 
 defineRouteRules({
 	prerender: true,
+	sitemap: { changefreq: 'yearly', priority: 0.7 },
 })
 
 const recaptcha: Ref<IReCaptchaComposition | undefined> = ref(undefined)

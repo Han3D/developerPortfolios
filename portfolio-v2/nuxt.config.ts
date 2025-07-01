@@ -36,7 +36,51 @@ export default defineNuxtConfig({
 	},
 
 	site: {
+		url: 'https://han3d.dev',
 		name: 'Johannes Hueber',
+		description:
+			'Portfolio of Johannes Hueber (Han3D) - a fullstack engineer with a sprinkle of devops from Germany.',
+		defaultLocale: 'de',
+		trailingSlash: true,
+	},
+
+	seo: {
+		fallbackTitle: false,
+		redirectToCanonicalSiteUrl: true,
+	},
+
+	sitemap: {
+		strictNuxtContentPaths: true,
+	},
+
+	robots: {
+		// Allow all bots to crawl the site
+		groups: [
+			{
+				userAgent: ['*'],
+				allow: ['/'],
+				disallow: ['/admin'],
+			},
+		],
+	},
+
+	ogImage: {
+		enabled: true,
+		// This will generate dynamic OG images for your pages
+	},
+
+	schemaOrg: {
+		identity: {
+			type: 'Person',
+			name: 'Johannes Hueber',
+			url: 'https://han3d.dev', // Replace with your actual domain
+			image: '/img/logo.png',
+			sameAs: [
+				// Add your social media profiles here
+				'https://github.com/han3d',
+				// 'https://linkedin.com/in/yourusername',
+			],
+		},
 	},
 
 	nodemailer: {
