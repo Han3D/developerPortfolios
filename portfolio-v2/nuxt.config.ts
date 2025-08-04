@@ -15,7 +15,7 @@ export default defineNuxtConfig({
 	],
 
 	fonts: {
-		families: [{ name: 'Raleway', provider: 'google' }],
+		families: [{ name: 'Raleway', provider: 'google', weights: ['100 900'] }],
 	},
 
 	vite: {
