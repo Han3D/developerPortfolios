@@ -84,7 +84,7 @@ export default defineNuxtConfig({
 	},
 
 	nodemailer: {
-		from: 'Han3D Portfolio',
+		from: '"Han3D Portfolio" <portfolio@han3d.dev>',
 		host: 'sandbox.smtp.mailtrap.io',
 		port: 2525,
 		// secure: true,
